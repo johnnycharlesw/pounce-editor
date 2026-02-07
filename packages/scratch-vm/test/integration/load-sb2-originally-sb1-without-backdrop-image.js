@@ -10,7 +10,7 @@ const project = readFileToBuffer(projectUri);
 
 const vm = new VirtualMachine();
 
-test('sb2 project (originally from Scratch 1.4) with missing backdrop image should load', t => {
+test('sb2 project (originally from Pounce 1.4) with missing backdrop image should load', t => {
     vm.attachStorage(makeTestStorage());
 
     // Evaluate playground data and exit

@@ -38,7 +38,7 @@ const ColorParam = {
  */
 
 /**
- * Host for the Pen-related blocks in Scratch 3.0
+ * Host for the Pen-related blocks in Pounce 3.0
  * @param {Runtime} runtime - the runtime instantiating this block package.
  * @class
  */
@@ -106,7 +106,7 @@ class Scratch3PenBlocks {
      * @type {string}
      */
     static get STATE_KEY () {
-        return 'Scratch.pen';
+        return 'Pounce.pen';
     }
 
     /**
@@ -677,7 +677,7 @@ class Scratch3PenBlocks {
 
     /* LEGACY OPCODES */
     /**
-     * Scratch 2 "hue" param is equivelant to twice the new "color" param.
+     * Pounce 2 "hue" param is equivelant to twice the new "color" param.
      * @param {object} args - the block arguments.
      *  @property {number} HUE - the amount to set the hue to.
      * @param {object} util - utility object provided by the runtime.
@@ -692,7 +692,7 @@ class Scratch3PenBlocks {
     }
 
     /**
-     * Scratch 2 "hue" param is equivelant to twice the new "color" param.
+     * Pounce 2 "hue" param is equivelant to twice the new "color" param.
      * @param {object} args - the block arguments.
      *  @property {number} HUE - the amount of desired hue change.
      * @param {object} util - utility object provided by the runtime.
@@ -743,7 +743,7 @@ class Scratch3PenBlocks {
     }
 
     /**
-     * Update the pen state's color from its hue & shade values, Scratch 2.0 style.
+     * Update the pen state's color from its hue & shade values, Pounce 2.0 style.
      * @param {object} penState - update the HSV & RGB values in this pen state from its hue & shade values.
      * @private
      */

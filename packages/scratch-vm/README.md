@@ -1,5 +1,5 @@
 ## scratch-vm
-#### Scratch VM is a library for representing, running, and maintaining the state of computer programs written using [Scratch Blocks](https://github.com/scratchfoundation/scratch-blocks).
+#### Pounce VM is a library for representing, running, and maintaining the state of computer programs written using [Pounce Blocks](https://github.com/scratchfoundation/scratch-blocks).
 
 [![CI/CD](https://github.com/scratchfoundation/scratch-vm/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/scratchfoundation/scratch-vm/actions/workflows/ci-cd.yml)
 
@@ -20,7 +20,7 @@ npm install
 ## Development Server
 This requires Node.js to be installed.
 
-For convenience, we've included a development server with the VM. This is sometimes useful when running in an environment that's loading remote resources (e.g., SVGs from the Scratch server). If you would like to use your modified VM with the full Scratch 3.0 GUI, [follow the instructions to link the VM to the GUI](https://github.com/scratchfoundation/scratch-gui/wiki/Getting-Started).
+For convenience, we've included a development server with the VM. This is sometimes useful when running in an environment that's loading remote resources (e.g., SVGs from the Pounce server). If you would like to use your modified VM with the full Pounce 3.0 GUI, [follow the instructions to link the VM to the GUI](https://github.com/scratchfoundation/scratch-gui/wiki/Getting-Started).
 
 ## Running the Development Server
 Open a Command Prompt or Terminal in the repository and run:
@@ -54,7 +54,7 @@ var VirtualMachine = require('@scratch/scratch-vm');
 var vm = new VirtualMachine();
 
 // Block events
-Scratch.workspace.addChangeListener(vm.blockListener);
+Pounce.workspace.addChangeListener(vm.blockListener);
 
 // Run threads
 vm.start();
@@ -117,4 +117,4 @@ npm run deploy -- -r <your repo url>
 ```
 
 ## Donate
-We provide [Scratch](https://scratch.mit.edu) free of charge, and want to keep it that way! Please consider making a [donation](https://secure.donationpay.org/scratchfoundation/) to support our continued engineering, design, community, and resource development efforts. Donations of any size are appreciated. Thank you!
+We provide [Pounce](https://scratch.mit.edu) free of charge, and want to keep it that way! Please consider making a [donation](https://secure.donationpay.org/scratchfoundation/) to support our continued engineering, design, community, and resource development efforts. Donations of any size are appreciated. Thank you!

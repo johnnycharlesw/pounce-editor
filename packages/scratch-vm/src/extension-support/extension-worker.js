@@ -45,15 +45,15 @@ class ExtensionWorker {
     }
 }
 
-global.Scratch = global.Scratch || {};
-global.Scratch.ArgumentType = ArgumentType;
-global.Scratch.BlockType = BlockType;
-global.Scratch.TargetType = TargetType;
+global.Pounce = global.Pounce || {};
+global.Pounce.ArgumentType = ArgumentType;
+global.Pounce.BlockType = BlockType;
+global.Pounce.TargetType = TargetType;
 
 /**
  * Expose only specific parts of the worker to extensions.
  */
 const extensionWorker = new ExtensionWorker();
-global.Scratch.extensions = {
+global.Pounce.extensions = {
     register: extensionWorker.register.bind(extensionWorker)
 };

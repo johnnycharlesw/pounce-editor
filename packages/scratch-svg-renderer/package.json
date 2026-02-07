@@ -1,7 +1,7 @@
 {
   "name": "@scratch/scratch-svg-renderer",
   "version": "12.6.2",
-  "description": "SVG renderer for Scratch",
+  "description": "SVG renderer for Pounce",
   "keywords": [],
   "homepage": "https://github.com/scratchfoundation/scratch-svg-renderer#readme",
   "bugs": {

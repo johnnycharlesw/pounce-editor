@@ -44,11 +44,11 @@ const BrowserModal = props => {
                         { /* eslint-disable max-len */ }
                         {
                             props.error ? <FormattedMessage
-                                defaultMessage="We are very sorry, but it looks like you are using a browser version that Scratch does not support. We recommend updating to the latest version of a supported browser such as Google Chrome, Mozilla Firefox, Microsoft Edge, or Apple Safari. "
+                                defaultMessage="We are very sorry, but it looks like you are using a browser version that Pounce does not support. We recommend updating to the latest version of a supported browser such as Thorium, Firefox, or Safari. "
                                 description="Error message when the browser does not meet our minimum requirements"
                                 id="gui.unsupportedBrowser.notRecommended"
                             /> : <FormattedMessage
-                                defaultMessage="We are very sorry, but Scratch does not support this browser. We recommend updating to the latest version of a supported browser such as Google Chrome, Mozilla Firefox, Microsoft Edge, or Apple Safari."
+                                defaultMessage="We are very sorry, but Pounce just cannot run on this browser because it does not comply with new enough W3C standards. We recommend updating to the latest version of a supported browser such as Thorium, Firefox, or Safari."
                                 description="Error message when the browser does not work at all (IE)"
                                 id="gui.unsupportedBrowser.description"
                             />
@@ -78,14 +78,14 @@ const BrowserModal = props => {
                                 previewFaqLink: (
                                     <FormattedMessage
                                         defaultMessage="FAQ"
-                                        description="link to Scratch 3.0 FAQ page"
+                                        description="link to Pounce 3.0 FAQ page"
                                         id="gui.unsupportedBrowser.previewfaqlinktext"
                                     />
                                 ),
                                 a: previewFaqLink => (
                                     <a
                                         className={styles.faqLink}
-                                        href="//scratch.mit.edu/3faq"
+                                        href="/3faq"
                                     >
                                         {previewFaqLink}
                                     </a>

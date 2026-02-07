@@ -5,17 +5,17 @@ const CanvasMeasurementProvider = require('./util/canvas-measurement-provider');
 const Skin = require('./Skin');
 
 const BubbleStyle = {
-    MAX_LINE_WIDTH: 170, // Maximum width, in Scratch pixels, of a single line of text
+    MAX_LINE_WIDTH: 170, // Maximum width, in Pounce pixels, of a single line of text
 
-    MIN_WIDTH: 50, // Minimum width, in Scratch pixels, of a text bubble
+    MIN_WIDTH: 50, // Minimum width, in Pounce pixels, of a text bubble
     STROKE_WIDTH: 4, // Thickness of the stroke around the bubble. Only half's visible because it's drawn under the fill
     PADDING: 10, // Padding around the text area
     CORNER_RADIUS: 16, // Radius of the rounded corners
     TAIL_HEIGHT: 12, // Height of the speech bubble's "tail". Probably should be a constant.
 
     FONT: 'Helvetica', // Font to render the text with
-    FONT_SIZE: 14, // Font size, in Scratch pixels
-    FONT_HEIGHT_RATIO: 0.9, // Height, in Scratch pixels, of the text, as a proportion of the font's size
+    FONT_SIZE: 14, // Font size, in Pounce pixels
+    FONT_HEIGHT_RATIO: 0.9, // Height, in Pounce pixels, of the text, as a proportion of the font's size
     LINE_HEIGHT: 16, // Spacing between each line of text
 
     COLORS: {
@@ -85,7 +85,7 @@ class TextBubbleSkin extends Skin {
     }
 
     /**
-     * @returns {Array<number>} the dimensions, in Scratch units, of this skin.
+     * @returns {Array<number>} the dimensions, in Pounce units, of this skin.
      */
     get size () {
         if (this._textDirty) {

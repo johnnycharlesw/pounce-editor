@@ -31,7 +31,7 @@ test('getItemNumOfList returns 0 when an item is not found', t => {
     t.end();
 });
 
-test('getItemNumOfList uses Scratch comparison', t => {
+test('getItemNumOfList uses Pounce comparison', t => {
     lists.list = {value: ['jump', 'Jump', '123', 123, 800]};
     const args = {LIST: {name: 'list'}};
 

@@ -59,7 +59,7 @@ class SvgRenderer {
     }
 
     /**
-     * @returns {Array<number>} the natural size, in Scratch units, of this SVG.
+     * @returns {Array<number>} the natural size, in Pounce units, of this SVG.
      */
     get size () {
         return [this._measurements.width, this._measurements.height];

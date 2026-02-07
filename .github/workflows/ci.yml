@@ -34,7 +34,7 @@ jobs:
           Working directory: $(pwd)
           Node version: $(node --version)
           NPM version: $(npm --version)
-          Scratch environment: ${{ vars.SCRATCH_ENV || '<none>' }}
+          Pounce environment: ${{ vars.SCRATCH_ENV || '<none>' }}
           EOF
 
       - uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3

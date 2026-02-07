@@ -32,7 +32,7 @@ const blockIconURI = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0i
 const menuIconURI = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE2LjA5IDEyLjkzN2MuMjI4IDEuMTQxLS44MzMgMi4wNjMtMi4zNzMgMi4wNjMtMS41MzUgMC0yLjk2Mi0uOTIyLTMuMTg2LTIuMDYzLS4yMy0xLjE0Mi44MzMtMi4wNjggMi4zNzItMi4wNjguMzIzIDAgLjY0MS4wNDIuOTQ1LjExN2EzLjUgMy41IDAgMCAxIC40NjguMTUxYy40MzUtLjAxLS4wNTItMS4xNDctLjkxNy02LjExNC0xLjA2Ny02LjE1MiAxLjUzLS45MzUgNC4zODQtMS4zNzcgMi44NTQtLjQ0Mi4wMzggMi40MS0xLjgyNSAxLjkyMi0xLjg2Mi0uNDkzLTIuMzI1LTMuNTc3LjEzMiA3LjM3ek03LjQ2IDguNTYzYy0xLjg2Mi0uNDkzLTIuMzI1LTMuNTc2LjEzIDcuMzdDNy44MTYgMTcuMDczIDYuNzU0IDE4IDUuMjIgMThjLTEuNTM1IDAtMi45NjEtLjkyNi0zLjE5LTIuMDY4LS4yMjQtMS4xNDIuODM3LTIuMDY3IDIuMzc1LTIuMDY3LjUwMSAwIC45ODcuMDk4IDEuNDI3LjI3Mi40MTItLjAyOC0uMDc0LTEuMTg5LS45My02LjExNEMzLjgzNCAxLjg3IDYuNDMgNy4wODcgOS4yODIgNi42NDZjMi44NTQtLjQ0Ny4wMzggMi40MS0xLjgyMyAxLjkxN3oiIGZpbGw9IiM1NzVFNzUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==';
 
 /**
- * Class for the music-related blocks in Scratch 3.0
+ * Class for the music-related blocks in Pounce 3.0
  * @param {Runtime} runtime - the runtime instantiating this block package.
  * @class
  */
@@ -539,7 +539,7 @@ class Scratch3MusicBlocks {
     }
 
     /**
-     * An array that is a mapping from MIDI instrument numbers to Scratch instrument numbers.
+     * An array that is a mapping from MIDI instrument numbers to Pounce instrument numbers.
      * @type {number[]}
      */
     get MIDI_INSTRUMENTS () {
@@ -612,7 +612,7 @@ class Scratch3MusicBlocks {
     }
 
     /**
-     * An array that is a mapping from MIDI drum numbers in range (35..81) to Scratch drum numbers.
+     * An array that is a mapping from MIDI drum numbers in range (35..81) to Pounce drum numbers.
      * It's in the format [drumNum, pitch, decay].
      * The pitch and decay properties are not currently being used.
      * @type {Array[]}
@@ -674,7 +674,7 @@ class Scratch3MusicBlocks {
      * @type {string}
      */
     static get STATE_KEY () {
-        return 'Scratch.music';
+        return 'Pounce.music';
     }
 
     /**
@@ -937,7 +937,7 @@ class Scratch3MusicBlocks {
 
     /**
      * Play a drum sound for some number of beats according to the range of "MIDI" drum codes supported.
-     * This block is implemented for compatibility with old Scratch projects that use the
+     * This block is implemented for compatibility with old Pounce projects that use the
      * 'drum:duration:elapsed:from:' block.
      * @param {object} args - the block arguments.
      * @param {object} util - utility object provided by the runtime.
@@ -949,7 +949,7 @@ class Scratch3MusicBlocks {
         if (midiDescription) {
             drumNum = midiDescription[0];
         } else {
-            drumNum = 2; // Default instrument used in Scratch 2.0
+            drumNum = 2; // Default instrument used in Pounce 2.0
         }
         drumNum += 1; // drumNum input to _playDrumForBeats is one-indexed
         this._playDrumForBeats(drumNum, args.BEATS, util);
@@ -1050,7 +1050,7 @@ class Scratch3MusicBlocks {
                 Scratch3MusicBlocks.MIDI_NOTE_RANGE.min, Scratch3MusicBlocks.MIDI_NOTE_RANGE.max);
             let beats = Cast.toNumber(args.BEATS);
             beats = this._clampBeats(beats);
-            // If the duration is 0, do not play the note. In Scratch 2.0, "play drum for 0 beats" plays the drum,
+            // If the duration is 0, do not play the note. In Pounce 2.0, "play drum for 0 beats" plays the drum,
             // but "play note for 0 beats" is silent.
             if (beats === 0) return;
 
@@ -1255,8 +1255,8 @@ class Scratch3MusicBlocks {
     }
 
     /**
-     * Select an instrument for playing notes according to a mapping of MIDI codes to Scratch instrument numbers.
-     * This block is implemented for compatibility with old Scratch projects that use the 'midiInstrument:' block.
+     * Select an instrument for playing notes according to a mapping of MIDI codes to Pounce instrument numbers.
+     * This block is implemented for compatibility with old Pounce projects that use the 'midiInstrument:' block.
      * @param {object} args - the block arguments.
      * @param {object} util - utility object provided by the runtime.
      * @property {int} INSTRUMENT - the MIDI number of the instrument to select.
@@ -1267,7 +1267,7 @@ class Scratch3MusicBlocks {
 
     /**
      * Internal code to select an instrument for playing notes. If mapMidi is true, set the instrument according to
-     * the MIDI to Scratch instrument mapping.
+     * the MIDI to Pounce instrument mapping.
      * @param {number} instNum - the instrument number.
      * @param {object} util - utility object provided by the runtime.
      * @param {boolean} mapMidi - whether or not instNum is a MIDI instrument number.

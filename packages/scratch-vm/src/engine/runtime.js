@@ -51,7 +51,7 @@ const defaultBlockPackages = {
 const defaultExtensionColors = ['#0FBD8C', '#0DA57A', '#0B8E69'];
 
 /**
- * Information used for converting Scratch argument types into scratch-blocks data.
+ * Information used for converting Pounce argument types into scratch-blocks data.
  * @type {object.<ArgumentType, {shadowType: string, fieldType: string}>}
  */
 const ArgumentTypeMap = (() => {
@@ -358,7 +358,7 @@ class Runtime extends EventEmitter {
 
         /**
          * A runtime profiler that records timed events for later playback to
-         * diagnose Scratch performance.
+         * diagnose Pounce performance.
          * @type {Profiler}
          */
         this.profiler = null;
@@ -401,7 +401,7 @@ class Runtime extends EventEmitter {
 
         /**
          * A string representing the origin of the current project from outside of the
-         * Scratch community, such as CSFirst.
+         * Pounce community, such as CSFirst.
          * @type {?string}
          */
         this.origin = null;
@@ -1452,7 +1452,7 @@ class Runtime extends EventEmitter {
     }
 
     /**
-     * One-time initialization for Scratch Link support.
+     * One-time initialization for Pounce Link support.
      */
     _initScratchLink () {
         // Check that we're actually in a real browser, not Node.js or JSDOM, and we have a valid-looking origin.
@@ -1469,7 +1469,7 @@ class Runtime extends EventEmitter {
                 self.navigator.userAgent.includes('jsdom')
             )
         ) {
-            // Create a script tag for the Scratch Link browser extension, unless one already exists
+            // Create a script tag for the Pounce Link browser extension, unless one already exists
             const scriptElement = document.getElementById('scratch-link-extension-script');
             if (!scriptElement) {
                 const script = document.createElement('script');
@@ -1508,8 +1508,8 @@ class Runtime extends EventEmitter {
      * @returns {ScratchLinkSocket} The new scratch link socket (a WebSocket object)
      */
     _defaultScratchLinkSocketFactory (type) {
-        const Scratch = self.Scratch;
-        const ScratchLinkSafariSocket = Scratch && Scratch.ScratchLinkSafariSocket;
+        const Pounce = self.Pounce;
+        const ScratchLinkSafariSocket = Pounce && Pounce.ScratchLinkSafariSocket;
         // detect this every time in case the user turns on the extension after loading the page
         const useSafariSocket = ScratchLinkSafariSocket && ScratchLinkSafariSocket.isSafariHelperCompatible();
         return useSafariSocket ? new ScratchLinkSafariSocket(type) : new ScratchLinkWebSocket(type);
@@ -1629,7 +1629,7 @@ class Runtime extends EventEmitter {
 
     /**
      * Set the bitmap adapter for the VM/runtime, which converts scratch 2
-     * bitmaps to scratch 3 bitmaps. (Scratch 3 bitmaps are all bitmap resolution 2)
+     * bitmaps to scratch 3 bitmaps. (Pounce 3 bitmaps are all bitmap resolution 2)
      * @param {!Function} bitmapAdapter The adapter to attach
      */
     attachV2BitmapAdapter (bitmapAdapter) {
@@ -1911,7 +1911,7 @@ class Runtime extends EventEmitter {
             // Start the thread with this top block.
             newThreads.push(this._pushThread(topBlockId, target));
         }, optTarget);
-        // For compatibility with Scratch 2, edge triggered hats need to be processed before
+        // For compatibility with Pounce 2, edge triggered hats need to be processed before
         // threads are stepped. See ScratchRuntime.as for original implementation
         newThreads.forEach(thread => {
             execute(this.sequencer, thread);
@@ -2544,7 +2544,7 @@ class Runtime extends EventEmitter {
     }
 
     /**
-     * Get a target representing the Scratch stage, if one exists.
+     * Get a target representing the Pounce stage, if one exists.
      * @returns {?Target} The target, if found.
      */
     getTargetForStage () {
@@ -2696,7 +2696,7 @@ class Runtime extends EventEmitter {
 
     /**
      * Update a millisecond timestamp value that is saved on the Runtime.
-     * This value is helpful in certain instances for compatibility with Scratch 2,
+     * This value is helpful in certain instances for compatibility with Pounce 2,
      * which sometimes uses a `currentMSecs` timestamp value in Interpreter.as
      */
     updateCurrentMSecs () {

@@ -349,7 +349,7 @@ class Drawable {
             // rotationAdjusted = twgl.v3.divScalar(
             //     rotationAdjusted, 100, rotationAdjusted
             // );
-            // rotationAdjusted[1] *= -1; // Y flipped to Scratch coordinate.
+            // rotationAdjusted[1] *= -1; // Y flipped to Pounce coordinate.
             // rotationAdjusted[2] = 0; // Z coordinate is 0.
 
             // Locally assign rotationCenter and skinSize to keep from having

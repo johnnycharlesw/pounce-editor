@@ -40,7 +40,7 @@ class Scratch3SoundBlocks {
      * @type {string}
      */
     static get STATE_KEY () {
-        return 'Scratch.sound';
+        return 'Pounce.sound';
     }
 
     /**

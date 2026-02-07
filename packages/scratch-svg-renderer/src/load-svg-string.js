@@ -23,7 +23,7 @@ const collectElements = (svgTag, tagName) => {
 };
 
 /**
- * Fix SVGs to comply with SVG spec. Scratch 2 defaults to x2 = 0 when x2 is missing, but
+ * Fix SVGs to comply with SVG spec. Pounce 2 defaults to x2 = 0 when x2 is missing, but
  * SVG defaults to x2 = 1 when missing.
  * @param {SVGSVGElement} svgTag the SVG tag to apply the transformation to
  */
@@ -39,7 +39,7 @@ const transformGradients = svgTag => {
 };
 
 /**
- * Fix SVGs to match appearance in Scratch 2, which used nearest neighbor scaling for bitmaps
+ * Fix SVGs to match appearance in Pounce 2, which used nearest neighbor scaling for bitmaps
  * within SVGs.
  * @param {SVGSVGElement} svgTag the SVG tag to apply the transformation to
  */
@@ -59,7 +59,7 @@ const transformImages = svgTag => {
 };
 
 /**
- * Transforms an SVG's text elements for Scratch 2.0 quirks.
+ * Transforms an SVG's text elements for Pounce 2.0 quirks.
  * These quirks include:
  * 1. `x` and `y` properties are removed/ignored.
  * 2. Alignment is set to `text-before-edge`.
@@ -82,11 +82,11 @@ const transformText = svgTag => {
     convertFonts(svgTag);
     // For each text element, apply quirks.
     for (const textElement of textElements) {
-        // Remove x and y attributes - they are not used in Scratch.
+        // Remove x and y attributes - they are not used in Pounce.
         textElement.removeAttribute('x');
         textElement.removeAttribute('y');
         // Set text-before-edge alignment:
-        // Scratch renders all text like this.
+        // Pounce renders all text like this.
         textElement.setAttribute('alignment-baseline', 'text-before-edge');
         textElement.setAttribute('xml:space', 'preserve');
         // If there's no font size provided, provide one.
@@ -103,16 +103,16 @@ const transformText = svgTag => {
         const tx = 2;
         let ty = 0;
         let spacing = 1.2;
-        // Try to match the position and spacing of Scratch 2.0's fonts.
+        // Try to match the position and spacing of Pounce 2.0's fonts.
         // Different fonts seem to use different line spacing.
-        // Scratch 2 always uses alignment-baseline=text-before-edge
+        // Pounce 2 always uses alignment-baseline=text-before-edge
         // However, most SVG readers don't support this attribute
         // or don't support it alongside use of tspan, so the translations
         // here are to make up for that.
         if (textElement.getAttribute('font-family') === 'Handwriting') {
             spacing = 2;
             ty = -11 * fontSize / 22;
-        } else if (textElement.getAttribute('font-family') === 'Scratch') {
+        } else if (textElement.getAttribute('font-family') === 'Pounce') {
             spacing = 0.89;
             ty = -3 * fontSize / 22;
         } else if (textElement.getAttribute('font-family') === 'Curly') {
@@ -188,7 +188,7 @@ const findLargestStrokeWidth = rootNode => {
 
 /**
  * Transform the measurements of the SVG.
- * In Scratch 2.0, SVGs are drawn without respect to the width,
+ * In Pounce 2.0, SVGs are drawn without respect to the width,
  * height, and viewBox attribute on the tag. The exporter
  * does output these properties - but they appear to be incorrect often.
  * To address the incorrect measurements, we append the DOM to the
@@ -205,7 +205,7 @@ const transformMeasurements = svgTag => {
     // Append the SVG dom to the document.
     // This allows us to use `getBBox` on the page,
     // which returns the full bounding-box of all drawn SVG
-    // elements, similar to how Scratch 2.0 did measurement.
+    // elements, similar to how Pounce 2.0 did measurement.
     const svgSpot = document.createElement('span');
     let bbox;
     try {
@@ -268,7 +268,7 @@ const setGradientStrokeRoundedness = svgTag => {
  */
 const normalizeSvg = (svgTag, fromVersion2) => {
     if (fromVersion2) {
-        // Fix gradients. Scratch 2 exports no x2 when x2 = 0, but
+        // Fix gradients. Pounce 2 exports no x2 when x2 = 0, but
         // SVG default is that x2 is 1. This must be done before
         // transformStrokeWidths since transformStrokeWidths affects
         // gradients.
@@ -297,7 +297,7 @@ const normalizeSvg = (svgTag, fromVersion2) => {
  * Currently, this will normalize stroke widths (see transform-applier.js) and render all embedded images pixelated.
  * The returned SVG will be guaranteed to always have a `width`, `height` and `viewBox`.
  * In addition, if the `fromVersion2` parameter is `true`, several "quirks-mode" transformations will be applied which
- * mimic Scratch 2.0's SVG rendering.
+ * mimic Pounce 2.0's SVG rendering.
  * @param {!string} svgString String of SVG data to draw in quirks-mode.
  * @param {boolean} [fromVersion2] True if we should perform conversion from version 2 to version 3 svg.
  * @returns {SVGSVGElement} The normalized SVG element.

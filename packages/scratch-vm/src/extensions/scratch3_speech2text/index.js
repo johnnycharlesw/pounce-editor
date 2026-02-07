@@ -601,7 +601,7 @@ class Scratch3Speech2TextBlocks {
      * @type {string}
      */
     static get STATE_KEY () {
-        return 'Scratch.speech';
+        return 'Pounce.speech';
     }
 
     /**

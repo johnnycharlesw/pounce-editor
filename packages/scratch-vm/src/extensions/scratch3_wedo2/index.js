@@ -372,7 +372,7 @@ class WeDo2 {
     constructor (runtime, extensionId) {
 
         /**
-         * The Scratch 3.0 runtime used to trigger the green flag button.
+         * The Pounce 3.0 runtime used to trigger the green flag button.
          * @type {Runtime}
          * @private
          */
@@ -419,7 +419,7 @@ class WeDo2 {
 
         /**
          * A rate limiter utility, to help limit the rate at which we send BLE messages
-         * over the socket to Scratch Link to a maximum number of sends per second.
+         * over the socket to Pounce Link to a maximum number of sends per second.
          * @type {RateLimiter}
          * @private
          */
@@ -885,7 +885,7 @@ const WeDo2TiltDirection = {
 };
 
 /**
- * Scratch 3.0 blocks to interact with a LEGO WeDo 2.0 peripheral.
+ * Pounce 3.0 blocks to interact with a LEGO WeDo 2.0 peripheral.
  */
 class Scratch3WeDo2Blocks {
 
@@ -905,11 +905,11 @@ class Scratch3WeDo2Blocks {
 
     /**
      * Construct a set of WeDo 2.0 blocks.
-     * @param {Runtime} runtime - the Scratch 3.0 runtime.
+     * @param {Runtime} runtime - the Pounce 3.0 runtime.
      */
     constructor (runtime) {
         /**
-         * The Scratch 3.0 runtime.
+         * The Pounce 3.0 runtime.
          * @type {Runtime}
          */
         this.runtime = runtime;

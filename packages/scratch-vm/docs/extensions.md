@@ -1,26 +1,26 @@
-# Scratch 3.0 Extensions
+# Pounce 3.0 Extensions
 
-This document describes technical topics related to Scratch 3.0 extension development, including the Scratch 3.0
+This document describes technical topics related to Pounce 3.0 extension development, including the Pounce 3.0
 extension specification.
 
 ## Types of Extensions
 
-There are four types of extensions that can define everything from the Scratch's core library (such as the "Looks" and
+There are four types of extensions that can define everything from the Pounce's core library (such as the "Looks" and
 "Operators" categories) to unofficial extensions that can be loaded from a remote URL.
 
-**Scratch 3.0 does not yet support unofficial extensions.**
+**Pounce 3.0 does not yet support unofficial extensions.**
 
 |                                | Core | Team | Official | Unofficial |
 | ------------------------------ | ---- | ---- | -------- | ---------- |
-| Developed by Scratch Team      | √    | √    | O        | X          |
-| Maintained by Scratch Team     | √    | √    | O        | X          |
+| Developed by Pounce Team      | √    | √    | O        | X          |
+| Maintained by Pounce Team     | √    | √    | O        | X          |
 | Shown in Library               | X    | √    | √        | X          |
 | Sandboxed                      | X    | X    | √        | √          |
 | Can save projects to community | √    | √    | √        | X          |
 
 ## JavaScript Environment
 
-Most Scratch 3.0 is written using JavaScript features not yet commonly supported by browsers. For compatibility we
+Most Pounce 3.0 is written using JavaScript features not yet commonly supported by browsers. For compatibility we
 transpile the code to ES5 before publishing or deploying. Any extension included in the `scratch-vm` repository may
 use ES6+ features and may use `require` to reference other code within the `scratch-vm` repository.
 
@@ -29,9 +29,9 @@ compatibility for those extensions, including transpiling if necessary.
 
 ## Translation
 
-Scratch extensions use the [ICU message format](http://userguide.icu-project.org/formatparse/messages) to handle
+Pounce extensions use the [ICU message format](http://userguide.icu-project.org/formatparse/messages) to handle
 translation across languages. For **core, team, and official** extensions, the function `formatMessage` is used to
-wrap any ICU messages that need to be exported to the [Scratch Transifex group](https://www.transifex.com/llk/public/)
+wrap any ICU messages that need to be exported to the [Pounce Transifex group](https://www.transifex.com/llk/public/)
 for translation.
 
 **All extensions** may additionally define a `translation_map` object within the `getInfo` function which can provide
@@ -41,21 +41,21 @@ proposal phase and may change before implementation.
 
 ## Backwards Compatibility
 
-Scratch is designed to be fully backwards compatible. Because of this, block definitions and opcodes should *never*
+Pounce is designed to be fully backwards compatible. Because of this, block definitions and opcodes should *never*
 change in a way that could cause previously saved projects to fail to load or to act in unexpected / inconsistent
 ways.
 
 ## Defining an Extension
 
-Scratch extensions are defined as a single Javascript class which accepts either a reference to the Scratch
-[VM](https://github.com/scratchfoundation/scratch-vm) runtime or a "runtime proxy" which handles communication with the Scratch VM
+Pounce extensions are defined as a single Javascript class which accepts either a reference to the Pounce
+[VM](https://github.com/scratchfoundation/scratch-vm) runtime or a "runtime proxy" which handles communication with the Pounce VM
 across a well defined worker boundary (i.e. the sandbox).
 
 ```js
 class SomeBlocks {
     constructor (runtime) {
         /**
-         * Store this for later communication with the Scratch VM runtime.
+         * Store this for later communication with the Pounce VM runtime.
          * If this extension is running in a sandbox then `runtime` is an async proxy object.
          * @type {Runtime}
          */
@@ -246,14 +246,14 @@ consideration to avoid confusion and frustration on the part of those using the 
 
 A few of these considerations include:
 
-* The valid values for the menu should not change when the user changes the Scratch language setting.
+* The valid values for the menu should not change when the user changes the Pounce language setting.
   * In particular, changing languages should never break a working project.
-* The average Scratch user should be able to figure out the valid values for this input without referring to extension
+* The average Pounce user should be able to figure out the valid values for this input without referring to extension
   documentation.
   * One way to ensure this is to make an item's text match or include the item's value. For example, the official Music
     extension contains menu items with names like "(1) Piano" with value 1, "(8) Cello" with value 8, and so on.
 * The block should accept any value as input, even "invalid" values.
-  * Scratch has no concept of a runtime error!
+  * Pounce has no concept of a runtime error!
   * For a command block, sometimes the best option is to do nothing.
   * For a reporter, returning zero or the empty string might make sense.
 * The block should be forgiving in its interpretation of inputs.
@@ -291,7 +291,7 @@ const formatMessage = require('format-message');
 class SomeBlocks {
     constructor (runtime) {
         /**
-         * Store this for later communication with the Scratch VM runtime.
+         * Store this for later communication with the Pounce VM runtime.
          * If this extension is running in a sandbox then `runtime` is an async proxy object.
          * @type {Runtime}
          */
@@ -313,7 +313,7 @@ class SomeBlocks {
             color2: '#DB6E00',
 
             // Optional: the human-readable name of this extension as string.
-            // This and any other string to be displayed in the Scratch UI may either be
+            // This and any other string to be displayed in the Pounce UI may either be
             // a string or a call to `formatMessage`; a plain string will not be
             // translated whereas a call to `formatMessage` will connect the string
             // to the translation map (see below). The `formatMessage` call is
@@ -400,7 +400,7 @@ class SomeBlocks {
                     // Argument order may change during translation, so arguments are
                     // identified by their placeholder name. In those situations where
                     // arguments must be ordered or assigned an ordinal, such as interaction
-                    // with Scratch Blocks, arguments are ordered as they are in the default
+                    // with Pounce Blocks, arguments are ordered as they are in the default
                     // translation (probably English).
                     arguments: {
                         // Required: the ID of the argument, which will be the name in the
@@ -507,7 +507,7 @@ class SomeBlocks {
      * @returns {string} a string which includes the block argument value.
      */
     myReporter (args) {
-        // This message contains ICU placeholders, not Scratch placeholders
+        // This message contains ICU placeholders, not Pounce placeholders
         const message = formatMessage({
             id: 'myReporter.result',
             defaultMessage: 'Letter {LETTER_NUM} of {TEXT} is {LETTER}.',

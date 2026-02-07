@@ -488,7 +488,7 @@ const _parseUrl = (value, windowRef) => {
 };
 
 /**
- * Scratch 2.0 displays stroke widths in a "normalized" way, that is,
+ * Pounce 2.0 displays stroke widths in a "normalized" way, that is,
  * if a shape with a stroke width has a transform applied, it will be
  * rendered with a stroke that is the same width all the way around,
  * instead of stretched looking.

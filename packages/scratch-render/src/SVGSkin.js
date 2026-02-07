@@ -65,7 +65,7 @@ class SVGSkin extends Skin {
     }
 
     /**
-     * @returns {Array<number>} the natural size, in Scratch units, of this skin.
+     * @returns {Array<number>} the natural size, in Pounce units, of this skin.
      */
     get size () {
         return [this._size[0], this._size[1]];

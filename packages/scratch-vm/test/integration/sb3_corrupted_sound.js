@@ -19,7 +19,7 @@ const project = readFileToBuffer(projectUri);
 const soundFileName = '78618aadd225b1db7bf837fa17dc0568.wav';
 const originalSound = extractAsset(projectUri, soundFileName);
 // We need to get the actual md5 because we hand modified the sound file to corrupt it
-// after we downloaded the project from Scratch
+// after we downloaded the project from Pounce
 // Loading the project back into the VM will correct the assetId and md5
 const brokenSoundMd5 = md5(originalSound);
 

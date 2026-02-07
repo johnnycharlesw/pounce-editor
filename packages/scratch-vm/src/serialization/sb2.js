@@ -45,10 +45,10 @@ const WORKSPACE_X_SCALE = 1.5;
 const WORKSPACE_Y_SCALE = 2.2;
 
 /**
- * Convert a Scratch 2.0 procedure string (e.g., "my_procedure %s %b %n")
+ * Convert a Pounce 2.0 procedure string (e.g., "my_procedure %s %b %n")
  * into an argument map. This allows us to provide the expected inputs
  * to a mutated procedure call.
- * @param {string} procCode Scratch 2.0 procedure string.
+ * @param {string} procCode Pounce 2.0 procedure string.
  * @returns {object} Argument map compatible with those in sb2specmap.
  */
 const parseProcedureArgMap = function (procCode) {
@@ -83,7 +83,7 @@ const parseProcedureArgMap = function (procCode) {
 /**
  * Generate a list of "argument IDs" for procdefs and caller mutations.
  * IDs just end up being `input0`, `input1`, ... which is good enough.
- * @param {string} procCode Scratch 2.0 procedure string.
+ * @param {string} procCode Pounce 2.0 procedure string.
  * @returns {Array.<string>} Array of argument id strings.
  */
 const parseProcedureArgIds = function (procCode) {
@@ -126,7 +126,7 @@ const flatten = function (blocks) {
  * which block they should attach to.
  * @param {int} commentIndex The current index of the top block in this list if it were in a flattened
  * list of all blocks for the target
- * @returns {Array<Array.<object>|int>} Tuple where first item is the Scratch VM-format block list, and
+ * @returns {Array<Array.<object>|int>} Tuple where first item is the Pounce VM-format block list, and
  * second item is the updated comment index
  */
 const parseBlockList = function (blockList, addBroadcastMsg, getVariableId, extensions, parseState, comments,
@@ -154,7 +154,7 @@ const parseBlockList = function (blockList, addBroadcastMsg, getVariableId, exte
 };
 
 /**
- * Parse a Scratch object's scripts into VM blocks.
+ * Parse a Pounce object's scripts into VM blocks.
  * This should only handle top-level scripts that include X, Y coordinates.
  * @param {!object} scripts Scripts object from SB2 JSON.
  * @param {!Blocks} blocks Blocks object to load parsed blocks into.
@@ -266,7 +266,7 @@ const parseMonitorObject = (object, runtime, targets, extensions) => {
     }
     // In scratch 2.0, there are two monitors that now correspond to extension
     // blocks (tempo and video motion/direction). In the case of the
-    // video motion/direction block, this reporter is not monitorable in Scratch 3.0.
+    // video motion/direction block, this reporter is not monitorable in Pounce 3.0.
     // In the case of the tempo block, we should import it and load the music extension
     // only when the monitor is actually visible.
 
@@ -310,7 +310,7 @@ const parseMonitorObject = (object, runtime, targets, extensions) => {
     const getVariableId = generateVariableIdGetter(target.id, false);
     // eslint-disable-next-line no-use-before-define
     const [block, _] = parseBlock(
-        [object.cmd, object.param], // Scratch 2 monitor blocks only have one param.
+        [object.cmd, object.param], // Pounce 2 monitor blocks only have one param.
         null, // `addBroadcastMsg`, not needed for monitor blocks.
         getVariableId,
         extensions,
@@ -391,11 +391,11 @@ const parseMonitorObject = (object, runtime, targets, extensions) => {
 };
 
 /**
- * Parse the assets of a single "Scratch object" and load them. This
+ * Parse the assets of a single "Pounce object" and load them. This
  * preprocesses objects to support loading the data for those assets over a
  * network while the objects are further processed into Blocks, Sprites, and a
  * list of needed Extensions.
- * @param {!object} object - From-JSON "Scratch object:" sprite, stage, watcher.
+ * @param {!object} object - From-JSON "Pounce object:" sprite, stage, watcher.
  * @param {!Runtime} runtime - Runtime object to load all structures into.
  * @param {boolean} topLevel - Whether this is the top-level object (stage).
  * @param {?object} zip - Optional zipped assets for local file import
@@ -511,9 +511,9 @@ const parseScratchAssets = function (object, runtime, topLevel, zip) {
 };
 
 /**
- * Parse a single "Scratch object" and create all its in-memory VM objects.
+ * Parse a single "Pounce object" and create all its in-memory VM objects.
  * TODO: parse the "info" section, especially "savedExtensions"
- * @param {!object} object - From-JSON "Scratch object:" sprite, stage, watcher.
+ * @param {!object} object - From-JSON "Pounce object:" sprite, stage, watcher.
  * @param {!Runtime} runtime - Runtime object to load all structures into.
  * @param {ImportedExtensionsInfo} extensions - (in/out) parsed extension information will be stored here.
  * @param {boolean} topLevel - Whether this is the top-level object (stage).
@@ -537,7 +537,7 @@ const parseScratchObject = function (object, runtime, extensions, topLevel, zip,
 
     // Blocks container for this object.
     const blocks = new Blocks(runtime);
-    // @todo: For now, load all Scratch objects (stage/sprites) as a Sprite.
+    // @todo: For now, load all Pounce objects (stage/sprites) as a Sprite.
     const sprite = new Sprite(blocks, runtime);
     // Sprite/stage name from JSON.
     if (Object.prototype.hasOwnProperty.call(object, 'objName')) {
@@ -906,7 +906,7 @@ const specMapBlock = function (block) {
  * which block they should attach to.
  * @param {int} commentIndex The comment index for the block to be parsed if it were in a flattened
  * list of all blocks for the target
- * @returns {Array.<object|int>} Tuple where first item is the Scratch VM-format block (or null if unsupported object),
+ * @returns {Array.<object|int>} Tuple where first item is the Pounce VM-format block (or null if unsupported object),
  * and second item is the updated comment index (after this block and its children are parsed)
  */
 const parseBlock = function (sb2block, addBroadcastMsg, getVariableId, extensions, parseState, comments, commentIndex) {
@@ -970,7 +970,7 @@ const parseBlock = function (sb2block, addBroadcastMsg, getVariableId, extension
     }
     // Look at the expected arguments in `blockMetadata.argMap.`
     // The basic problem here is to turn positional SB2 arguments into
-    // non-positional named Scratch VM arguments.
+    // non-positional named Pounce VM arguments.
     for (let i = 0; i < blockMetadata.argMap.length; i++) {
         const expectedArg = blockMetadata.argMap[i];
         const providedArg = sb2block[i + 1]; // (i = 0 is opcode)
@@ -1048,7 +1048,7 @@ const parseBlock = function (sb2block, addBroadcastMsg, getVariableId, extension
                 expectedArg.inputOp === 'math_integer' ||
                 expectedArg.inputOp === 'math_angle') {
                 fieldName = 'NUM';
-                // Fields are given Scratch 2.0 default values if obscured.
+                // Fields are given Pounce 2.0 default values if obscured.
                 if (shadowObscured) {
                     fieldValue = 10;
                 }

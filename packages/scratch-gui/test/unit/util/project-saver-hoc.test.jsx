@@ -21,7 +21,7 @@ describe('projectSaverHOC', () => {
                 config: legacyConfig,
                 projectChanged: false,
                 projectState: {},
-                projectTitle: 'Scratch Project',
+                projectTitle: 'Pounce Project',
                 timeout: {
                     autoSaveTimeoutId: null
                 }

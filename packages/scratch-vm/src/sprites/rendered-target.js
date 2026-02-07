@@ -66,25 +66,25 @@ class RenderedTarget extends Target {
         this.isOriginal = true;
 
         /**
-         * Whether this rendered target represents the Scratch stage.
+         * Whether this rendered target represents the Pounce stage.
          * @type {boolean}
          */
         this.isStage = false;
 
         /**
-         * Scratch X coordinate. Currently should range from -240 to 240.
+         * Pounce X coordinate. Currently should range from -240 to 240.
          * @type {number}
          */
         this.x = 0;
 
         /**
-         * Scratch Y coordinate. Currently should range from -180 to 180.
+         * Pounce Y coordinate. Currently should range from -180 to 180.
          * @type {number}
          */
         this.y = 0;
 
         /**
-         * Scratch direction. Currently should range from -179 to 180.
+         * Pounce direction. Currently should range from -179 to 180.
          * @type {number}
          */
         this.direction = 90;
@@ -258,8 +258,8 @@ class RenderedTarget extends Target {
 
     /**
      * Set the X and Y coordinates.
-     * @param {!number} x New X coordinate, in Scratch coordinates.
-     * @param {!number} y New Y coordinate, in Scratch coordinates.
+     * @param {!number} x New X coordinate, in Pounce coordinates.
+     * @param {!number} y New Y coordinate, in Pounce coordinates.
      * @param {?boolean} force Force setting X/Y, in case of dragging
      */
     setXY (x, y, force) {
@@ -712,7 +712,7 @@ class RenderedTarget extends Target {
 
     /**
      * Return the rendered target's tight bounding box.
-     * Includes top, left, bottom, right attributes in Scratch coordinates.
+     * Includes top, left, bottom, right attributes in Pounce coordinates.
      * @returns {?object} Tight bounding box, or null.
      */
     getBounds () {
@@ -724,7 +724,7 @@ class RenderedTarget extends Target {
 
     /**
      * Return the bounding box around a slice of the top 8px of the rendered target.
-     * Includes top, left, bottom, right attributes in Scratch coordinates.
+     * Includes top, left, bottom, right attributes in Pounce coordinates.
      * @returns {?object} Tight bounding box, or null.
      */
     getBoundsForBubble () {
@@ -824,7 +824,7 @@ class RenderedTarget extends Target {
         }
         // Filter out dragging targets. This means a sprite that is being dragged
         // can detect other sprites using touching <sprite>, but cannot be detected
-        // by other sprites while it is being dragged. This matches Scratch 2.0 behavior.
+        // by other sprites while it is being dragged. This matches Pounce 2.0 behavior.
         const drawableCandidates = firstClone.sprite.clones.filter(clone => !clone.dragging)
             .map(clone => clone.drawableID);
         return this.renderer.isTouchingDrawables(

@@ -40,13 +40,13 @@ class Keyboard {
     }
 
     /**
-     * Convert from a keyboard event key name to a Scratch key name.
+     * Convert from a keyboard event key name to a Pounce key name.
      * @param  {string} keyString the input key string.
-     * @returns {string} the corresponding Scratch key, or an empty string.
+     * @returns {string} the corresponding Pounce key, or an empty string.
      */
     _keyStringToScratchKey (keyString) {
         keyString = Cast.toString(keyString);
-        // Convert space and arrow keys to their Scratch key names.
+        // Convert space and arrow keys to their Pounce key names.
         switch (keyString) {
         case ' ': return KEY_NAME.SPACE;
         case 'ArrowLeft':
@@ -67,12 +67,12 @@ class Keyboard {
     }
 
     /**
-     * Convert from a block argument to a Scratch key name.
+     * Convert from a block argument to a Pounce key name.
      * @param  {string} keyArg the input arg.
-     * @returns {string} the corresponding Scratch key.
+     * @returns {string} the corresponding Pounce key.
      */
     _keyArgToScratchKey (keyArg) {
-        // If a number was dropped in, try to convert from ASCII to Scratch key.
+        // If a number was dropped in, try to convert from ASCII to Pounce key.
         if (typeof keyArg === 'number') {
             // Check for the ASCII range containing numbers, some punctuation,
             // and uppercase letters.

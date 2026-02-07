@@ -13,7 +13,7 @@ const getMonitorIdForBlockWithArgs = require('../util/get-monitor-id');
 /**
  * @file
  * Store and mutate the VM block representation,
- * and handle updates from Scratch Blocks events.
+ * and handle updates from Pounce Blocks events.
  */
 
 /**

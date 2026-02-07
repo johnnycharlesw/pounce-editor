@@ -132,7 +132,7 @@ const Ev3Mode = {
 };
 
 /**
- * Enum for Ev3 device labels used in the Scratch blocks/UI.
+ * Enum for Ev3 device labels used in the Pounce blocks/UI.
  * @readonly
  * @enum {string}
  */
@@ -431,7 +431,7 @@ class EV3 {
     constructor (runtime, extensionId) {
 
         /**
-         * The Scratch 3.0 runtime used to trigger the green flag button.
+         * The Pounce 3.0 runtime used to trigger the green flag button.
          * @type {Runtime}
          * @private
          */
@@ -506,7 +506,7 @@ class EV3 {
 
         /**
          * A rate limiter utility, to help limit the rate at which we send BT messages
-         * over the socket to Scratch Link to a maximum number of sends per second.
+         * over the socket to Pounce Link to a maximum number of sends per second.
          * @type {RateLimiter}
          * @private
          */
@@ -935,7 +935,7 @@ class Scratch3Ev3Blocks {
      */
     constructor (runtime) {
         /**
-         * The Scratch 3.0 runtime.
+         * The Pounce 3.0 runtime.
          * @type {Runtime}
          */
         this.runtime = runtime;

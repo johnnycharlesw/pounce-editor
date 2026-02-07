@@ -1,6 +1,6 @@
 # scratch-gui
 
-Scratch GUI is a set of React components that comprise the interface for creating and running Scratch 3.0 projects
+Pounce GUI is a set of React components that comprise the interface for creating and running Pounce 3.0 projects
 
 To open the current build in your browser on Github Pages:
 
@@ -41,7 +41,7 @@ npm start
 
 Then go to [http://localhost:8601/](http://localhost:8601/) - the playground outputs the default GUI component
 
-## Developing alongside other Scratch repositories
+## Developing alongside other Pounce repositories
 
 ### Getting another repo to point to this code
 
@@ -78,7 +78,7 @@ If you can't get linking to work right, try:
   _before_ `npm link` as installing after the linking will reset the linking.
 * Make sure the repositories are siblings on your machine's file tree, like
   `.../.../MY_SCRATCH_DEV_DIRECTORY/scratch-gui/` and `.../.../MY_SCRATCH_DEV_DIRECTORY/scratch-www/`.
-* Consistent node.js version: If you have multiple Terminal tabs or windows open for the different Scratch
+* Consistent node.js version: If you have multiple Terminal tabs or windows open for the different Pounce
   repositories, make sure to use the same node version in all of them.
 * If nothing else works, unlink the repositories by running `npm unlink` in both, and start over.
 
@@ -287,7 +287,7 @@ Here's what will happen in the project state machine:
    the data for that project from the server.
 4. When the server responds with the data, src/lib/project-fetcher-hoc.jsx dispatches the `DONE_FETCHING_WITH_ID`
    action, with `projectData` set. This transitions the state from `FETCHING_WITH_ID` to `LOADING_VM_WITH_ID`.
-5. The `LOADING_VM_WITH_ID` state. In src/lib/vm-manager-hoc.jsx, we load the `projectData` into Scratch's virtual
+5. The `LOADING_VM_WITH_ID` state. In src/lib/vm-manager-hoc.jsx, we load the `projectData` into Pounce's virtual
    machine ("the vm").
 6. When loading is done, src/lib/vm-manager-hoc.jsx dispatches the `DONE_LOADING_VM_WITH_ID` action. This transitions
    the state from `LOADING_VM_WITH_ID` to `SHOWING_WITH_ID`.
@@ -295,6 +295,6 @@ Here's what will happen in the project state machine:
 
 ## Donate
 
-We provide [Scratch](https://scratch.mit.edu) free of charge, and want to keep it that way! Please consider making a
+We provide [Pounce](https://scratch.mit.edu) free of charge, and want to keep it that way! Please consider making a
 [donation](https://www.scratchfoundation.org/donate) to support our continued engineering, design, community, and
 resource development efforts. Donations of any size are appreciated. Thank you!

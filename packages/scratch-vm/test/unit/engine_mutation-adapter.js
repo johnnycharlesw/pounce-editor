@@ -7,7 +7,7 @@ test('spec', t => {
     t.end();
 });
 
-test('convert DOM to Scratch object', t => {
+test('convert DOM to Pounce object', t => {
     const testStringRaw = '"arbitrary" & \'complicated\' test string';
     const testStringEscaped = '\\&quot;arbitrary\\&quot; &amp; &apos;complicated&apos; test string';
     const xml = `<mutation blockInfo="{&quot;text&quot;:&quot;${testStringEscaped}&quot;}"></mutation>`;

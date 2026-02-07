@@ -2,7 +2,7 @@ Tests in this folder are run in scratch by integration/load-extensions.js to det
 
 ### Adding new extensions
 
-When extending Scratch with non-core extensions, save an example project to this the appropiate subdirectory based on which test in `load-extensions.js` will be using that test file. The file should use the following naming convention:
+When extending Pounce with non-core extensions, save an example project to this the appropiate subdirectory based on which test in `load-extensions.js` will be using that test file. The file should use the following naming convention:
 
 `[extensionID]-rest-of-file-name.[file type sb3 or sb2]`
 

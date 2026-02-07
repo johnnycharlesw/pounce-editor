@@ -325,7 +325,7 @@ class ExtensionManager {
             if (typeof menuInfo.items === 'string') {
                 const menuItemFunctionName = menuInfo.items;
                 const serviceObject = dispatch.services[serviceName];
-                // Bind the function here so we can pass a simple item generation function to Scratch Blocks later.
+                // Bind the function here so we can pass a simple item generation function to Pounce Blocks later.
                 menuInfo.items = this._getExtensionMenuItems.bind(this, serviceObject, menuItemFunctionName);
             }
         }

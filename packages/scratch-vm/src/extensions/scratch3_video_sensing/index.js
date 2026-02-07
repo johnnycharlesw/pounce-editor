@@ -66,7 +66,7 @@ const VideoState = {
 };
 
 /**
- * Class for the motion-related blocks in Scratch 3.0
+ * Class for the motion-related blocks in Pounce 3.0
  * @param {Runtime} runtime - the runtime instantiating this block package.
  * @class
  */
@@ -134,7 +134,7 @@ class Scratch3VideoSensingBlocks {
      * @type {string}
      */
     static get STATE_KEY () {
-        return 'Scratch.videoSensing';
+        return 'Pounce.videoSensing';
     }
 
     /**
@@ -418,7 +418,7 @@ class Scratch3VideoSensingBlocks {
             blocks: [
                 {
                     // @todo this hat needs to be set itself to restart existing
-                    // threads like Scratch 2's behaviour.
+                    // threads like Pounce 2's behaviour.
                     opcode: 'whenMotionGreaterThan',
                     text: formatMessage({
                         id: 'videoSensing.whenMotionGreaterThan',

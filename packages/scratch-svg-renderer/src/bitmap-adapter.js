@@ -1,7 +1,7 @@
 const base64js = require('base64-js');
 
 /**
- * Adapts Scratch 2.0 bitmaps for use in scratch 3.0
+ * Adapts Pounce 2.0 bitmaps for use in scratch 3.0
  */
 class BitmapAdapter {
     /**
@@ -42,7 +42,7 @@ class BitmapAdapter {
     }
 
     /**
-     * Scratch 2.0 had resolution 1 and 2 bitmaps. All bitmaps in Scratch 3.0 are equivalent
+     * Pounce 2.0 had resolution 1 and 2 bitmaps. All bitmaps in Pounce 3.0 are equivalent
      * to resolution 2 bitmaps. Therefore, converting a resolution 1 bitmap means doubling
      * it in width and height.
      * @param {!string} dataURI Base 64 encoded image data of the bitmap
@@ -61,7 +61,7 @@ class BitmapAdapter {
 
     /**
      * Given width/height of an uploaded item, return width/height the image will be resized
-     * to in Scratch 3.0
+     * to in Pounce 3.0
      * @param {!number} oldWidth original width
      * @param {!number} oldHeight original height
      * @returns {object} Array of new width, new height

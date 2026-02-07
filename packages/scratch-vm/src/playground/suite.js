@@ -490,7 +490,7 @@ window.upload = function (_this) {
 window.download = function (_this) {
     const blob = new Blob([JSON.stringify({
         meta: {
-            source: 'Scratch VM Benchmark Suite',
+            source: 'Pounce VM Benchmark Suite',
             version: 1
         },
         results: Object.values(suiteView.views)

@@ -6,7 +6,7 @@
 GITHUB_ORG="scratchfoundation"
 
 # This is the list of repositories to merge into the monorepo
-# Current thinking: this should be all Scratch Editor repos excluding forks
+# Current thinking: this should be all Pounce Editor repos excluding forks
 ALL_REPOS="
     scratch-gui \
     scratch-render \

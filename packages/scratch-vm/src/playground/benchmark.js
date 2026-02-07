@@ -4,7 +4,7 @@ if (window.performance) {
     // evaluation. This can tell us once measured how long the code spends time
     // turning into execution code for the first time. Skipping evaluation of
     // some of the code can help us make it faster.
-    performance.mark('Scratch.EvalStart');
+    performance.mark('Pounce.EvalStart');
 }
 
 class LoadingMiddleware {
@@ -51,7 +51,7 @@ const ScratchRender = require('@scratch/scratch-render');
 const AudioEngine = require('scratch-audio');
 const ScratchSVGRenderer = require('@scratch/scratch-svg-renderer');
 
-const Scratch = window.Scratch = window.Scratch || {};
+const Pounce = window.Pounce = window.Pounce || {};
 
 const ASSET_SERVER = 'https://cdn.assets.scratch.mit.edu/';
 const PROJECT_SERVER = 'https://cdn.projects.scratch.mit.edu/';
@@ -78,7 +78,7 @@ const loadProject = function () {
     if (id.length < 1 || !isFinite(id)) {
         id = projectInput.value;
     }
-    Scratch.vm.downloadProjectId(id);
+    Pounce.vm.downloadProjectId(id);
     return id;
 };
 
@@ -157,14 +157,14 @@ class LoadingProgress {
             if (_this.dataLoaded === 0 && window.performance) {
                 // Mark in browser inspectors how long it takes to load the
                 // projects initial data file.
-                performance.mark('Scratch.LoadDataStart');
+                performance.mark('Pounce.LoadDataStart');
             }
 
             const result = _load.call(this, ...args);
 
             if (_this.dataLoaded) {
                 if (_this.contentTotal === 0 && window.performance) {
-                    performance.mark('Scratch.DownloadStart');
+                    performance.mark('Pounce.DownloadStart');
                 }
 
                 _this.contentTotal += 1;
@@ -176,8 +176,8 @@ class LoadingProgress {
                 if (_this.dataLoaded === 0) {
                     if (window.performance) {
                         // How long did loading the data file take?
-                        performance.mark('Scratch.LoadDataEnd');
-                        performance.measure('Scratch.LoadData', 'Scratch.LoadDataStart', 'Scratch.LoadDataEnd');
+                        performance.mark('Pounce.LoadDataEnd');
+                        performance.measure('Pounce.LoadData', 'Pounce.LoadDataStart', 'Pounce.LoadDataEnd');
                     }
 
                     _this.dataLoaded = 1;
@@ -191,8 +191,8 @@ class LoadingProgress {
                     if (window.performance) {
                         // How long did it take to download the html, js, and
                         // all the project assets?
-                        performance.mark('Scratch.DownloadEnd');
-                        performance.measure('Scratch.Download', 'Scratch.DownloadStart', 'Scratch.DownloadEnd');
+                        performance.mark('Pounce.DownloadEnd');
+                        performance.measure('Pounce.Download', 'Pounce.DownloadStart', 'Pounce.DownloadEnd');
                     }
 
                     window.ScratchVMDownloadEnd = Date.now();
@@ -210,8 +210,8 @@ class LoadingProgress {
             if (window.performance) {
                 // How long did it take to load and hydrate the html, js, and
                 // all the project assets?
-                performance.mark('Scratch.LoadEnd');
-                performance.measure('Scratch.Load', 'Scratch.LoadStart', 'Scratch.LoadEnd');
+                performance.mark('Pounce.LoadEnd');
+                performance.measure('Pounce.Load', 'Pounce.LoadStart', 'Pounce.LoadEnd');
             }
 
             window.ScratchVMLoadEnd = Date.now();
@@ -586,7 +586,7 @@ const runBenchmark = function () {
     // Lots of global variables to make debugging easier
     // Instantiate the VM.
     const vm = new VirtualMachine();
-    Scratch.vm = vm;
+    Pounce.vm = vm;
 
     vm.setTurboMode(true);
 
@@ -646,7 +646,7 @@ const runBenchmark = function () {
     // Instantiate the renderer and connect it to the VM.
     const canvas = document.getElementById('scratch-stage');
     const renderer = new ScratchRender(canvas);
-    Scratch.renderer = renderer;
+    Pounce.renderer = renderer;
     vm.attachRenderer(renderer);
     const audioEngine = new AudioEngine();
     vm.attachAudioEngine(audioEngine);
@@ -661,7 +661,7 @@ const runBenchmark = function () {
             canvasWidth: rect.width,
             canvasHeight: rect.height
         };
-        Scratch.vm.postIOData('mouse', coordinates);
+        Pounce.vm.postIOData('mouse', coordinates);
     });
     canvas.addEventListener('mousedown', e => {
         const rect = canvas.getBoundingClientRect();
@@ -672,7 +672,7 @@ const runBenchmark = function () {
             canvasWidth: rect.width,
             canvasHeight: rect.height
         };
-        Scratch.vm.postIOData('mouse', data);
+        Pounce.vm.postIOData('mouse', data);
         e.preventDefault();
     });
     canvas.addEventListener('mouseup', e => {
@@ -684,7 +684,7 @@ const runBenchmark = function () {
             canvasWidth: rect.width,
             canvasHeight: rect.height
         };
-        Scratch.vm.postIOData('mouse', data);
+        Pounce.vm.postIOData('mouse', data);
         e.preventDefault();
     });
 
@@ -694,7 +694,7 @@ const runBenchmark = function () {
         if (e.target !== document && e.target !== document.body) {
             return;
         }
-        Scratch.vm.postIOData('keyboard', {
+        Pounce.vm.postIOData('keyboard', {
             keyCode: e.keyCode,
             isDown: true
         });
@@ -703,7 +703,7 @@ const runBenchmark = function () {
     document.addEventListener('keyup', e => {
         // Always capture up events,
         // even those that have switched to other targets.
-        Scratch.vm.postIOData('keyboard', {
+        Pounce.vm.postIOData('keyboard', {
             keyCode: e.keyCode,
             isDown: false
         });
@@ -744,8 +744,8 @@ window.onhashchange = function () {
 };
 
 if (window.performance) {
-    performance.mark('Scratch.EvalEnd');
-    performance.measure('Scratch.Eval', 'Scratch.EvalStart', 'Scratch.EvalEnd');
+    performance.mark('Pounce.EvalEnd');
+    performance.measure('Pounce.Eval', 'Pounce.EvalStart', 'Pounce.EvalEnd');
 }
 
 window.ScratchVMEvalEnd = Date.now();

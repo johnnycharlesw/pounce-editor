@@ -195,7 +195,7 @@ class UpdatePeripheralStep extends React.Component {
                     {!showResults &&
                         <BalancedFormattedMessage
                             className={styles.bottomAreaItem}
-                            defaultMessage={'Do not leave or reload Scratch or disconnect your {extensionName} ' +
+                            defaultMessage={'Do not leave or reload Pounce or disconnect your {extensionName} ' +
                                 'until the update is complete.'}
                             description="Notice to not disrupt the peripheral update process"
                             id="gui.connection.updatePeripheral.doNotDisconnect"

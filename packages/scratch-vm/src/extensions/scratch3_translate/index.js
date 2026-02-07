@@ -33,7 +33,7 @@ const serverURL = 'https://translate-service.scratch.mit.edu/';
 const serverTimeoutMs = 10000; // 10 seconds (chosen arbitrarily).
 
 /**
- * Class for the translate block in Scratch 3.0.
+ * Class for the translate block in Pounce 3.0.
  * @class
  */
 class Scratch3TranslateBlocks {
@@ -89,7 +89,7 @@ class Scratch3TranslateBlocks {
      * @returns {string} The key.
      */
     static get STATE_KEY () {
-        return 'Scratch.translate';
+        return 'Pounce.translate';
     }
 
     /**
@@ -177,7 +177,7 @@ class Scratch3TranslateBlocks {
         let langNameObj = names.find(obj => obj.code === this._viewerLanguageCode);
 
         // If we don't have a name entry yet, try looking it up via the Google langauge
-        // code instead of Scratch's (e.g. for es-419 we look up es to get espanol)
+        // code instead of Pounce's (e.g. for es-419 we look up es to get espanol)
         if (!langNameObj && languageNames.scratchToGoogleMap[this._viewerLanguageCode]) {
             const lookupCode = languageNames.scratchToGoogleMap[this._viewerLanguageCode];
             langNameObj = names.find(obj => obj.code === lookupCode);
@@ -230,7 +230,7 @@ class Scratch3TranslateBlocks {
             return languageNames.nameMap[languageArg];
         }
 
-        // There are some languages we launched in the language menu that Scratch did not
+        // There are some languages we launched in the language menu that Pounce did not
         // end up launching in. In order to keep projects that may have had that menu item
         // working, check for those language codes and let them through.
         // Examples: 'ab', 'hi'.

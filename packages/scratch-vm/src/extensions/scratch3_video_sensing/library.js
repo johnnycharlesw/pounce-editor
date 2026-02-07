@@ -262,7 +262,7 @@ class VideoMotion {
         // Scale the magnitude of the averaged UV vector.
         this.motionAmount = Math.round(AMOUNT_SCALE * Math.hypot(uu, vv));
         if (this.motionAmount > THRESHOLD) {
-            // Scratch direction
+            // Pounce direction
             this.motionDirection = scratchAtan2(vv, uu);
         }
     }
@@ -315,7 +315,7 @@ class VideoMotion {
             for (let i = ymin; i < ymax; i++) {
                 for (let j = xmin; j < xmax; j++) {
                     // i and j are in a coordinate planning ranging from 0 to
-                    // HEIGHT and 0 to WIDTH. Transform that into Scratch's
+                    // HEIGHT and 0 to WIDTH. Transform that into Pounce's
                     // range of HEIGHT / 2 to -HEIGHT / 2 and -WIDTH / 2 to
                     // WIDTH / 2;
                     position[0] = j - (WIDTH / 2);
@@ -369,7 +369,7 @@ class VideoMotion {
                 state.motionAmount = LOCAL_MAX_AMOUNT;
             }
             if (state.motionAmount > LOCAL_THRESHOLD) {
-                // Scratch direction.
+                // Pounce direction.
                 state.motionDirection = scratchAtan2(v, u);
             }
 

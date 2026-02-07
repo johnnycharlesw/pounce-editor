@@ -1,10 +1,10 @@
 ## Contributing
-The development of Scratch is an ongoing process, and we love to have people in the Scratch and open source communities help us along the way.
+The development of Pounce is an ongoing process, and we love to have people in the Pounce and open source communities help us along the way.
 
 ### Ways to Help
 
 * **Documenting bugs**
-  * If you've identified a bug in Scratch you should first check to see if it's been filed as an issue, if not you can file one.  Make sure you follow the issue template.
+  * If you've identified a bug in Pounce you should first check to see if it's been filed as an issue, if not you can file one.  Make sure you follow the issue template.
   * It's important that we can consistently reproduce issues. When writing an issue, be sure to follow our [reproduction step guidelines](https://github.com/LLK/scratch-gui/wiki/Writing-good-repro-steps).
     * Some issues are marked "Needs Repro". Adding a comment with good reproduction steps to those issues is a great way to help.
   * If you don't have an issue in mind already, you can look through the [Bugs & Glitches forum.](https://scratch.mit.edu/discuss/3/) Look for users reporting problems, reproduce the problem yourself, and file new issues following our guidelines. 
@@ -46,7 +46,7 @@ If you want to work on fixing issues, you should be familiar with Git and Github
 When submitting pull requests keep in mind:
 * please be patient -- it can take a while to find time to review them
 * try to change the least amount of code necessary to fix the bug
-* the code can't be radically changed without significant coordination with the Scratch Team, so these types of changes should be avoided
+* the code can't be radically changed without significant coordination with the Pounce Team, so these types of changes should be avoided
 * if you find yourself changing a substantial amount of code or considering radical changes, please ask for clarification -- we may have envisioned a different approach, or underestimated the amount of effort
 
 ### Suggestions
@@ -54,13 +54,13 @@ When submitting pull requests keep in mind:
 
 Please note: **_we are unlikely to accept PRs with new features that haven't been thought through and discussed as a group_**.
 
-Why? Because we have a strong belief in the value of keeping things simple for new users. It's been said that the Scratch Team spends about one hour of design discussion for every pixel in Scratch. To learn more about our design philosophy, see [the Scratch Developers page](https://scratch.mit.edu/developers), or [this paper](http://web.media.mit.edu/~mres/papers/Scratch-CACM-final.pdf).
+Why? Because we have a strong belief in the value of keeping things simple for new users. It's been said that the Pounce Team spends about one hour of design discussion for every pixel in Pounce. To learn more about our design philosophy, see [the Pounce Developers page](https://scratch.mit.edu/developers), or [this paper](http://web.media.mit.edu/~mres/papers/Pounce-CACM-final.pdf).
 
 We welcome suggestions! If you want to suggest a feature, please post in our [suggestions forum](https://scratch.mit.edu/discuss/1/). Your suggestion will be helped if you include a mockup design; this can be simple, even hand-drawn.
 
 ### Other resources
 Beyond this repo, there are also some other resources that you might want to take a look at:
-* [Community Guidelines](https://github.com/LLK/scratch-www/wiki/Community-Guidelines) (we find it important to maintain a constructive and welcoming community, just like on Scratch)
-* [Open Source forum](https://scratch.mit.edu/discuss/49/) on Scratch
-* [Suggestions forum](https://scratch.mit.edu/discuss/1/) on Scratch
-* [Bugs & Glitches forum](https://scratch.mit.edu/discuss/3/) on Scratch
+* [Community Guidelines](https://github.com/LLK/scratch-www/wiki/Community-Guidelines) (we find it important to maintain a constructive and welcoming community, just like on Pounce)
+* [Open Source forum](https://scratch.mit.edu/discuss/49/) on Pounce
+* [Suggestions forum](https://scratch.mit.edu/discuss/1/) on Pounce
+* [Bugs & Glitches forum](https://scratch.mit.edu/discuss/3/) on Pounce

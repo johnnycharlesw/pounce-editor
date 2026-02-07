@@ -1,6 +1,6 @@
 /**
  * @file
- * Object representing a Scratch variable.
+ * Object representing a Pounce variable.
  */
 
 const uid = require('../util/uid');

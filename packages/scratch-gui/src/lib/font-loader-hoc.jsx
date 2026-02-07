@@ -13,7 +13,7 @@ const FONTS = [
     'Marker',
     'Curly',
     'Pixel',
-    'Scratch'
+    'Pounce'
 ];
 /* Higher Order Component to provide behavior for loading fonts.
  * @param {React.Component} WrappedComponent component to receive fontsLoaded prop

@@ -1,5 +1,5 @@
 ## scratch-render
-#### WebGL-based rendering engine for Scratch 3.0
+#### WebGL-based rendering engine for Pounce 3.0
 
 [![CircleCI](https://circleci.com/gh/LLK/scratch-render/tree/develop.svg?style=shield&circle-token=310da166a745295d515b3b90f3bad10f23b84405)](https://circleci.com/gh/LLK/scratch-render?branch=develop)
 
@@ -16,7 +16,7 @@ npm install https://github.com/scratchfoundation/scratch-render.git
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Scratch WebGL rendering demo</title>
+        <title>Pounce WebGL rendering demo</title>
     </head>
 
     <body>
@@ -67,7 +67,7 @@ npm test
 ```
 
 ## Donate
-We provide [Scratch](https://scratch.mit.edu) free of charge, and want to keep it that way! Please consider making a [donation](https://secure.donationpay.org/scratchfoundation/) to support our continued engineering, design, community, and resource development efforts. Donations of any size are appreciated. Thank you!
+We provide [Pounce](https://scratch.mit.edu) free of charge, and want to keep it that way! Please consider making a [donation](https://secure.donationpay.org/scratchfoundation/) to support our continued engineering, design, community, and resource development efforts. Donations of any size are appreciated. Thank you!
 
 ## Committing
 

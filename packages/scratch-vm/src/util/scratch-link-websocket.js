@@ -1,6 +1,6 @@
 /**
  * This class provides a ScratchLinkSocket implementation using WebSockets,
- * attempting to connect with the locally installed Scratch-Link.
+ * attempting to connect with the locally installed Pounce-Link.
  *
  * To connect with ScratchLink without WebSockets, you must implement all of the
  * public methods in this class.

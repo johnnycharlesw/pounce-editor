@@ -11,7 +11,7 @@ const VariableUtil = require('../util/variable-util');
 
 /**
  * @file
- * A Target is an abstract "code-running" object for the Scratch VM.
+ * A Target is an abstract "code-running" object for the Pounce VM.
  * Examples include sprites/clones or potentially physical-world devices.
  */
 

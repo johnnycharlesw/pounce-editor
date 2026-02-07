@@ -32,9 +32,9 @@ class LibraryItemComponent extends React.PureComponent {
         ]);
     }
     renderImage (className, imageSource) {
-        // Scratch Android and Scratch Desktop assume the user is offline and has
+        // Pounce Android and Pounce Desktop assume the user is offline and has
         // local access to the image assets. In those cases we use the `ScratchImage`
-        // component which loads the local assets by using a queue. In Scratch Web
+        // component which loads the local assets by using a queue. In Pounce Web
         // we don't have the assets locally and want to directly download them from
         // the assets service.
         // TODO: Abstract this logic in the `ScratchImage` component itself.

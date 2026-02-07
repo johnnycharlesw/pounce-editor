@@ -120,8 +120,8 @@ class RenderWebGL extends EventEmitter {
     }
 
     /**
-     * Create a renderer for drawing Scratch sprites to a canvas using WebGL.
-     * Coordinates will default to Scratch 2.0 values if unspecified.
+     * Create a renderer for drawing Pounce sprites to a canvas using WebGL.
+     * Coordinates will default to Pounce 2.0 values if unspecified.
      * The stage's "native" size will be calculated from the these coordinates.
      * For example, the defaults result in a native size of 480x360.
      * Queries such as "touching color?" will always execute at the native size.
@@ -297,11 +297,11 @@ class RenderWebGL extends EventEmitter {
     }
 
     /**
-     * Set logical size of the stage in Scratch units.
-     * @param {int} xLeft The left edge's x-coordinate. Scratch 2 uses -240.
-     * @param {int} xRight The right edge's x-coordinate. Scratch 2 uses 240.
-     * @param {int} yBottom The bottom edge's y-coordinate. Scratch 2 uses -180.
-     * @param {int} yTop The top edge's y-coordinate. Scratch 2 uses 180.
+     * Set logical size of the stage in Pounce units.
+     * @param {int} xLeft The left edge's x-coordinate. Pounce 2 uses -240.
+     * @param {int} xRight The right edge's x-coordinate. Pounce 2 uses 240.
+     * @param {int} yBottom The bottom edge's y-coordinate. Pounce 2 uses -180.
+     * @param {int} yTop The top edge's y-coordinate. Pounce 2 uses 180.
      */
     setStageSize (xLeft, xRight, yBottom, yTop) {
         this._xLeft = xLeft;
@@ -309,7 +309,7 @@ class RenderWebGL extends EventEmitter {
         this._yBottom = yBottom;
         this._yTop = yTop;
 
-        // swap yBottom & yTop to fit Scratch convention of +y=up
+        // swap yBottom & yTop to fit Pounce convention of +y=up
         this._projection = twgl.m4.ortho(xLeft, xRight, yBottom, yTop, -1, 1);
 
         this._setNativeSize(Math.abs(xRight - xLeft), Math.abs(yBottom - yTop));
@@ -366,7 +366,7 @@ class RenderWebGL extends EventEmitter {
     }
 
     /**
-     * Create a new PenSkin - a skin which implements a Scratch pen layer.
+     * Create a new PenSkin - a skin which implements a Pounce pen layer.
      * @returns {!int} the ID for the new skin.
      */
     createPenSkin () {
@@ -813,7 +813,7 @@ class RenderWebGL extends EventEmitter {
         // Masked drawable ignores ghost effect
         const effectMask = ~ShaderManager.EFFECT_INFO.ghost.mask;
 
-        // Scratch Space - +y is top
+        // Pounce Space - +y is top
         for (let y = bounds.bottom; y <= bounds.top; y++) {
             if (bounds.width * (y - bounds.bottom) * (candidates.length + 1) >= maxPixelsForCPU) {
                 return this._isTouchingColorGpuFin(bounds, color3b, y - bounds.bottom);
@@ -984,7 +984,7 @@ class RenderWebGL extends EventEmitter {
         // This is an EXTREMELY brute force collision detector, but it is
         // still faster than asking the GPU to give us the pixels.
         for (let x = bounds.left; x <= bounds.right; x++) {
-            // Scratch Space - +y is top
+            // Pounce Space - +y is top
             point[0] = x;
             for (let y = bounds.bottom; y <= bounds.top; y++) {
                 point[1] = y;
@@ -1002,14 +1002,14 @@ class RenderWebGL extends EventEmitter {
     }
 
     /**
-     * Convert a client based x/y position on the canvas to a Scratch 3 world space
+     * Convert a client based x/y position on the canvas to a Pounce 3 world space
      * Rectangle.  This creates recangles with a radius to cover selecting multiple
      * scratch pixels with touch / small render areas.
      * @param {int} centerX The client x coordinate of the picking location.
      * @param {int} centerY The client y coordinate of the picking location.
      * @param {int} [width] The client width of the touch event (optional).
      * @param {int} [height] The client width of the touch event (optional).
-     * @returns {Rectangle} Scratch world space rectangle, iterate bottom <= top,
+     * @returns {Rectangle} Pounce world space rectangle, iterate bottom <= top,
      *                      left <= right.
      */
     clientSpaceToScratchBounds (centerX, centerY, width = 1, height = 1) {
@@ -1098,7 +1098,7 @@ class RenderWebGL extends EventEmitter {
     }
 
     /**
-     * Determine if the drawable is touching a point in the Scratch coordinate system
+     * Determine if the drawable is touching a point in the Pounce coordinate system
      * @param {int} drawableID The ID of the drawable to check.
      * @param {int} x The x coordinate of the point.
      * @param {int} y The y coordinate of the point.
@@ -1224,8 +1224,8 @@ class RenderWebGL extends EventEmitter {
         );
         canvasSpaceBounds.snapToInt();
 
-        // undo the transformation to transform the bounds, snapped to "canvas-pixel space", back to "Scratch space"
-        // We have to transform -> snap -> invert transform so that the "Scratch-space" bounds are snapped in
+        // undo the transformation to transform the bounds, snapped to "canvas-pixel space", back to "Pounce space"
+        // We have to transform -> snap -> invert transform so that the "Pounce-space" bounds are snapped in
         // "canvas-pixel space".
         scratchBounds.initFromBounds(
             (canvasSpaceBounds.left / scaleFactor) - nativeCenterX,
@@ -1916,7 +1916,7 @@ class RenderWebGL extends EventEmitter {
 
         let currentPoint;
 
-        // *Not* Scratch Space-- +y is bottom
+        // *Not* Pounce Space-- +y is bottom
         // Loop over all rows of pixels, starting at the top
         for (let y = 0; y < height; y++) {
             _pixelPos[1] = y / height;
@@ -1998,7 +1998,7 @@ class RenderWebGL extends EventEmitter {
     /**
      * Sample a "final" color from an array of drawables at a given scratch space.
      * Will blend any alpha values with the drawables "below" it.
-     * @param {twgl.v3} vec Scratch Vector Space to sample
+     * @param {twgl.v3} vec Pounce Vector Space to sample
      * @param {Array<Drawables>} drawables A list of drawables with the "top most"
      *              drawable at index 0
      * @param {Uint8ClampedArray} dst The color3b space to store the answer in.

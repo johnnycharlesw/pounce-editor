@@ -3,7 +3,7 @@
  */
 
 /**
- * Given an SVG, replace Scratch 2.0 fonts with new 3.0 fonts. Add defaults where there are none.
+ * Given an SVG, replace Pounce 2.0 fonts with new 3.0 fonts. Add defaults where there are none.
  * @param {SVGElement} svgTag The SVG dom object
  * @returns {void}
  */

@@ -12,9 +12,9 @@ const distance = function (pointA, pointB) {
 };
 
 /**
- * Convert a point to Scratch coordinates.
+ * Convert a point to Pounce coordinates.
  * @param {{x: number, y: number}} position - Original coordinates of the point.
- * @returns {{x: number, y: number}} Converted point in Scratch coordinates.
+ * @returns {{x: number, y: number}} Converted point in Pounce coordinates.
  */
 const toScratchCoords = function (position) {
     return {

@@ -32,7 +32,7 @@ const __premultipliedColor = [0, 0, 0, 0];
 
 class PenSkin extends Skin {
     /**
-     * Create a Skin which implements a Scratch pen layer.
+     * Create a Skin which implements a Pounce pen layer.
      * @param {int} id - The unique ID for this Skin.
      * @param {RenderWebGL} renderer - The renderer which will use this Skin.
      * @augments Skin
@@ -117,7 +117,7 @@ class PenSkin extends Skin {
     }
 
     useNearest (scale) {
-        // Use nearest-neighbor interpolation when scaling up the pen skin-- this matches Scratch 2.0.
+        // Use nearest-neighbor interpolation when scaling up the pen skin-- this matches Pounce 2.0.
         // When scaling it down, use linear interpolation to avoid giving pen lines a "dashed" appearance.
         return Math.max(scale[0], scale[1]) >= 100;
     }
@@ -164,7 +164,7 @@ class PenSkin extends Skin {
      * @param {number} y1 - the Y coordinate of the end of the line.
      */
     drawLine (penAttributes, x0, y0, x1, y1) {
-        // For compatibility with Scratch 2.0, offset pen lines of width 1 and 3 so they're pixel-aligned.
+        // For compatibility with Pounce 2.0, offset pen lines of width 1 and 3 so they're pixel-aligned.
         // See https://github.com/LLK/scratch-render/pull/314
         const diameter = penAttributes.diameter || DefaultPenAttributes.diameter;
         const offset = (diameter === 1 || diameter === 3) ? 0.5 : 0;

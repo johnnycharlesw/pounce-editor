@@ -63,13 +63,13 @@ class MicroBit {
 
     /**
      * Construct a MicroBit communication object.
-     * @param {Runtime} runtime - the Scratch 3.0 runtime
+     * @param {Runtime} runtime - the Pounce 3.0 runtime
      * @param {string} extensionId - the id of the extension
      */
     constructor (runtime, extensionId) {
 
         /**
-         * The Scratch 3.0 runtime used to trigger the green flag button.
+         * The Pounce 3.0 runtime used to trigger the green flag button.
          * @type {Runtime}
          * @private
          */
@@ -403,7 +403,7 @@ const MicroBitPinState = {
 };
 
 /**
- * Scratch 3.0 blocks to interact with a MicroBit peripheral.
+ * Pounce 3.0 blocks to interact with a MicroBit peripheral.
  */
 class Scratch3MicroBitBlocks {
 
@@ -567,11 +567,11 @@ class Scratch3MicroBitBlocks {
 
     /**
      * Construct a set of MicroBit blocks.
-     * @param {Runtime} runtime - the Scratch 3.0 runtime.
+     * @param {Runtime} runtime - the Pounce 3.0 runtime.
      */
     constructor (runtime) {
         /**
-         * The Scratch 3.0 runtime.
+         * The Pounce 3.0 runtime.
          * @type {Runtime}
          */
         this.runtime = runtime;

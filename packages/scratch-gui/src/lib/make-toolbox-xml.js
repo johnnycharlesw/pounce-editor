@@ -749,7 +749,7 @@ const xmlClose = '</xml>';
  * when isInitialSetup is true.
  * @param {?string} targetId - The current editing target
  * @param {?Array.<object>} categoriesXML - optional array of `{id,xml}` for categories. This can include both core
- * and other extensions: core extensions will be placed in the normal Scratch order; others will go at the bottom.
+ * and other extensions: core extensions will be placed in the normal Pounce order; others will go at the bottom.
  * @property {string} id - the extension / category ID.
  * @property {string} xml - the `<category>...</category>` XML for this extension / category.
  * @param {?string} costumeName - The name of the default selected costume dropdown.

@@ -217,7 +217,7 @@ class VideoProvider {
                 // Hint to the stream that it should load. A standard way to do this
                 // is add the video tag to the DOM. Since this extension wants to
                 // hide the video tag and instead render a sample of the stream into
-                // the webgl rendered Scratch canvas, another hint like this one is
+                // the webgl rendered Pounce canvas, another hint like this one is
                 // needed.
                 this._video.play(); // Needed for Safari/Firefox, Chrome auto-plays.
                 this._track = stream.getTracks()[0];

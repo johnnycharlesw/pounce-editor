@@ -1,6 +1,6 @@
 /**
  * @file
- * A way to profile Scratch internal performance. Like what blocks run during a
+ * A way to profile Pounce internal performance. Like what blocks run during a
  * step? How much time do they take? How much time is spent inbetween blocks?
  *
  * Profiler aims for to spend as little time inside its functions while
@@ -141,7 +141,7 @@ class Profiler {
 
         /**
          * An array of profiler frames separated by counter argument. Generally
-         * for Scratch these frames are separated by block function opcode.
+         * for Pounce these frames are separated by block function opcode.
          * This tracks each time an opcode is called.
          * @type {Array.<ProfilerFrame>}
          */

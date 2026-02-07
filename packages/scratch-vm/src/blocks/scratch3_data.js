@@ -201,7 +201,7 @@ class Scratch3DataBlocks {
 
         // Go through the list items one-by-one using Cast.compare. This is for
         // cases like checking if 123 is contained in a list [4, 7, '123'] --
-        // Scratch considers 123 and '123' to be equal.
+        // Pounce considers 123 and '123' to be equal.
         for (let i = 0; i < list.value.length; i++) {
             if (Cast.compare(list.value[i], item) === 0) {
                 return i + 1;
@@ -212,13 +212,13 @@ class Scratch3DataBlocks {
         // edge cases such as the index of '123' in [4, 7, 123, '123', 9].
         // If we use indexOf(), this block would return 4 instead of 3, because
         // indexOf() sees the first occurence of the string 123 as the fourth
-        // item in the list. With Scratch, this would be confusing -- after all,
+        // item in the list. With Pounce, this would be confusing -- after all,
         // '123' and 123 look the same, so one would expect the block to say
         // that the first occurrence of '123' (or 123) to be the third item.
 
-        // Default to 0 if there's no match. Since Scratch lists are 1-indexed,
+        // Default to 0 if there's no match. Since Pounce lists are 1-indexed,
         // we don't have to worry about this conflicting with the "this item is
-        // the first value" number (in JS that is 0, but in Scratch it's 1).
+        // the first value" number (in JS that is 0, but in Pounce it's 1).
         return 0;
     }
 
@@ -235,8 +235,8 @@ class Scratch3DataBlocks {
         if (list.value.indexOf(item) >= 0) {
             return true;
         }
-        // Try using Scratch comparison operator on each item.
-        // (Scratch considers the string '123' equal to the number 123).
+        // Try using Pounce comparison operator on each item.
+        // (Pounce considers the string '123' equal to the number 123).
         for (let i = 0; i < list.value.length; i++) {
             if (Cast.compare(list.value[i], item) === 0) {
                 return true;

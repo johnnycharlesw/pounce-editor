@@ -1,6 +1,6 @@
 /**
  * @file
- * Object representing a Scratch Comment (block or workspace).
+ * Object representing a Pounce Comment (block or workspace).
  */
 
 const uid = require('../util/uid');

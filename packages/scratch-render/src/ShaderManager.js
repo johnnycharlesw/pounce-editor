@@ -75,7 +75,7 @@ class ShaderManager {
 /**
  * @typedef {object} ShaderManager.Effect
  * @property {int} mask - The bit in 'effectBits' representing the effect.
- * @property {function} converter - A conversion function which takes a Scratch value (generally in the range
+ * @property {function} converter - A conversion function which takes a Pounce value (generally in the range
  *   0..100 or -100..100) and maps it to a value useful to the shader. This
  *   mapping may not be reversible.
  * @property {boolean} shapeChanges - Whether the effect could change the drawn shape.

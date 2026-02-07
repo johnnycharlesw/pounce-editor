@@ -57,7 +57,7 @@ class Scratch3LooksBlocks {
      * @type {string}
      */
     static get STATE_KEY () {
-        return 'Scratch.looks';
+        return 'Pounce.looks';
     }
 
     /**
@@ -380,7 +380,7 @@ class Scratch3LooksBlocks {
 
     /**
      * Utility function to set the costume of a target.
-     * Matches the behavior of Scratch 2.0 for different types of arguments.
+     * Matches the behavior of Pounce 2.0 for different types of arguments.
      * @param {!Target} target Target to set costume to.
      * @param {Any} requestedCostume Costume requested, e.g., 0, 'name', etc.
      * @param {boolean=} optZeroIndex Set to zero-index the requestedCostume.
@@ -414,7 +414,7 @@ class Scratch3LooksBlocks {
 
     /**
      * Utility function to set the backdrop of a target.
-     * Matches the behavior of Scratch 2.0 for different types of arguments.
+     * Matches the behavior of Pounce 2.0 for different types of arguments.
      * @param {!Target} stage Target to set backdrop to.
      * @param {Any} requestedBackdrop Backdrop requested, e.g., 0, 'name', etc.
      * @param {boolean=} optZeroIndex Set to zero-index the requestedBackdrop.
@@ -492,7 +492,7 @@ class Scratch3LooksBlocks {
         }
         // We've run before; check if the wait is still going on.
         const instance = this;
-        // Scratch 2 considers threads to be waiting if they are still in
+        // Pounce 2 considers threads to be waiting if they are still in
         // runtime.threads. Threads that have run all their blocks, or are
         // marked done but still in runtime.threads are still considered to
         // be waiting.

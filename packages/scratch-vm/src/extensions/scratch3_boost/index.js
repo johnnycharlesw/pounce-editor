@@ -408,7 +408,7 @@ class BoostMotor {
 
         /**
          * If the motor has been turned on run for a specific rotation, this is the function
-         * that will be called once Scratch VM gets a notification from the Move Hub.
+         * that will be called once Pounce VM gets a notification from the Move Hub.
          * @type {object}
          * @private
          */
@@ -659,7 +659,7 @@ class Boost {
     constructor (runtime, extensionId) {
 
         /**
-         * The Scratch 3.0 runtime used to trigger the green flag button.
+         * The Pounce 3.0 runtime used to trigger the green flag button.
          * @type {Runtime}
          * @private
          */
@@ -714,7 +714,7 @@ class Boost {
 
         /**
          * A rate limiter utility, to help limit the rate at which we send BLE messages
-         * over the socket to Scratch Link to a maximum number of sends per second.
+         * over the socket to Pounce Link to a maximum number of sends per second.
          * @type {RateLimiter}
          * @private
          */
@@ -1246,7 +1246,7 @@ const BoostTiltDirection = {
 };
 
 /**
- * Scratch 3.0 blocks to interact with a LEGO Boost peripheral.
+ * Pounce 3.0 blocks to interact with a LEGO Boost peripheral.
  */
 class Scratch3BoostBlocks {
 
@@ -1266,11 +1266,11 @@ class Scratch3BoostBlocks {
 
     /**
      * Construct a set of Boost blocks.
-     * @param {Runtime} runtime - the Scratch 3.0 runtime.
+     * @param {Runtime} runtime - the Pounce 3.0 runtime.
      */
     constructor (runtime) {
         /**
-         * The Scratch 3.0 runtime.
+         * The Pounce 3.0 runtime.
          * @type {Runtime}
          */
         this.runtime = runtime;

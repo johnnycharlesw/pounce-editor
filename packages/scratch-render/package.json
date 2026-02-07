@@ -1,7 +1,7 @@
 {
   "name": "@scratch/scratch-render",
   "version": "12.6.2",
-  "description": "WebGL Renderer for Scratch 3.0",
+  "description": "WebGL Renderer for Pounce 3.0",
   "keywords": [],
   "homepage": "https://github.com/scratchfoundation/scratch-render#readme",
   "bugs": {

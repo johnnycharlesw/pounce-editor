@@ -2,7 +2,7 @@
   "name": "scratch-editor",
   "version": "12.6.2",
   "private": "true",
-  "description": "Scratch editor mono-repository",
+  "description": "Pounce editor mono-repository",
   "keywords": [],
   "homepage": "https://github.com/scratchfoundation/scratch-editor#readme",
   "bugs": {
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/scratchfoundation/scratch-editor.git"
   },
   "license": "AGPL-3.0-only",
-  "author": "Scratch Foundation",
+  "author": "John Charles Woods",
   "workspaces": [
     "packages/task-herder",
     "packages/scratch-svg-renderer",
@@ -44,5 +44,8 @@
     "husky": "8.0.3",
     "npm": "10.9.4",
     "ts-node": "10.9.2"
+  },
+  "dependencies": {
+    "preact": "^10.28.3"
   }
 }

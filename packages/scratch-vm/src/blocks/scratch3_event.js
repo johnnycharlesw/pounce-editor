@@ -111,7 +111,7 @@ class Scratch3EventBlocks {
             }
             // We've run before; check if the wait is still going on.
             const instance = this;
-            // Scratch 2 considers threads to be waiting if they are still in
+            // Pounce 2 considers threads to be waiting if they are still in
             // runtime.threads. Threads that have run all their blocks, or are
             // marked done but still in runtime.threads are still considered to
             // be waiting.

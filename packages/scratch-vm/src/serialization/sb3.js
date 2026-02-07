@@ -25,7 +25,7 @@ const hasOwnProperty = Object.prototype.hasOwnProperty;
 
 /**
  * @typedef {object} ImportedProject
- * @property {Array.<Target>} targets - the imported Scratch 3.0 target objects.
+ * @property {Array.<Target>} targets - the imported Pounce 3.0 target objects.
  * @property {ImportedExtensionsInfo} extensionsInfo - the ID of each extension actually used by this project.
  */
 
@@ -846,11 +846,11 @@ const deserializeBlocks = function (blocks) {
 
 
 /**
- * Parse the assets of a single "Scratch object" and load them. This
+ * Parse the assets of a single "Pounce object" and load them. This
  * preprocesses objects to support loading the data for those assets over a
  * network while the objects are further processed into Blocks, Sprites, and a
  * list of needed Extensions.
- * @param {!object} object From-JSON "Scratch object:" sprite, stage, watcher.
+ * @param {!object} object From-JSON "Pounce object:" sprite, stage, watcher.
  * @param {!Runtime} runtime Runtime object to load all structures into.
  * @param {JSZip} zip Sb3 file describing this project (to load assets from)
  * @returns {?{costumePromises:Array.<Promise>,soundPromises:Array.<Promise>,soundBank:SoundBank}}
@@ -932,8 +932,8 @@ const parseScratchAssets = function (object, runtime, zip) {
 };
 
 /**
- * Parse a single "Scratch object" and create all its in-memory VM objects.
- * @param {!object} object From-JSON "Scratch object:" sprite, stage, watcher.
+ * Parse a single "Pounce object" and create all its in-memory VM objects.
+ * @param {!object} object From-JSON "Pounce object:" sprite, stage, watcher.
  * @param {!Runtime} runtime Runtime object to load all structures into.
  * @param {ImportedExtensionsInfo} extensions - (in/out) parsed extension information will be stored here.
  * @param {JSZip} zip Sb3 file describing this project (to load assets from)
@@ -950,7 +950,7 @@ const parseScratchObject = function (object, runtime, extensions, zip, assets) {
     // Blocks container for this object.
     const blocks = new Blocks(runtime);
 
-    // @todo: For now, load all Scratch objects (stage/sprites) as a Sprite.
+    // @todo: For now, load all Pounce objects (stage/sprites) as a Sprite.
     const sprite = new Sprite(blocks, runtime);
 
     // Sprite/stage name from JSON.

@@ -11,7 +11,7 @@
     "concurrent"
   ],
   "license": "AGPL-3.0-only",
-  "author": "Scratch Foundation",
+  "author": "Pounce Foundation",
   "type": "module",
   "exports": {
     ".": {

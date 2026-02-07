@@ -77,7 +77,7 @@ const FEMALE_TENOR_RATE = 0.89; // -2 semitones
 const FEMALE_GIANT_RATE = 0.79; // -4 semitones
 
 /**
- * Language ids. The value for each language id is a valid Scratch locale.
+ * Language ids. The value for each language id is a valid Pounce locale.
  */
 const ARABIC_ID = 'ar';
 const CHINESE_ID = 'zh-cn';
@@ -132,7 +132,7 @@ class Scratch3Text2SpeechBlocks {
         }
 
         /**
-         * A list of all Scratch locales that are supported by the extension.
+         * A list of all Pounce locales that are supported by the extension.
          * @type {Array}
          */
         this._supportedLocales = this._getSupportedLocales();
@@ -200,7 +200,7 @@ class Scratch3Text2SpeechBlocks {
      *      Set by the editor, and used to store the language state in the project.
      *      Listed in l10n: https://github.com/scratchfoundation/scratch-l10n/blob/master/src/supported-locales.js
      * SUPPORTED LOCALE
-     *      A Scratch locale that has a corresponding extension locale.
+     *      A Pounce locale that has a corresponding extension locale.
      * EXTENSION LOCALE
      *      A locale corresponding to one of the available spoken languages
      *      in the extension. There can be multiple supported locales for a single
@@ -345,7 +345,7 @@ class Scratch3Text2SpeechBlocks {
      * @returns {string} The key.
      */
     static get STATE_KEY () {
-        return 'Scratch.text2speech';
+        return 'Pounce.text2speech';
     }
 
     /**
@@ -485,7 +485,7 @@ class Scratch3Text2SpeechBlocks {
     /**
      * Get the language code currently set in the editor, or fall back to the
      * browser locale.
-     * @returns {string} a Scratch locale code.
+     * @returns {string} a Pounce locale code.
      */
     getEditorLanguage () {
         const locale = formatMessage.setup().locale ||
@@ -495,7 +495,7 @@ class Scratch3Text2SpeechBlocks {
 
     /**
      * Get the language code currently set for the extension.
-     * @returns {string} a Scratch locale code.
+     * @returns {string} a Pounce locale code.
      */
     getCurrentLanguage () {
         const stage = this.runtime.getTargetForStage();
@@ -574,7 +574,7 @@ class Scratch3Text2SpeechBlocks {
     }
 
     /**
-     * Check if a Scratch language code is in the list of supported languages for the
+     * Check if a Pounce language code is in the list of supported languages for the
      * speech synthesis service.
      * @param {string} languageCode the language code to check.
      * @returns {boolean} true if the language code is supported.

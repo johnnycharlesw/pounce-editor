@@ -303,7 +303,7 @@ class VirtualMachine extends EventEmitter {
     }
 
     /**
-     * Load a Scratch project from a .sb, .sb2, .sb3 or json string.
+     * Load a Pounce project from a .sb, .sb2, .sb3 or json string.
      * @param {string | object} input A json string, object, or ArrayBuffer representing the project to load.
      * @returns {!Promise} Promise that resolves after targets are installed.
      */
@@ -338,10 +338,10 @@ class VirtualMachine extends EventEmitter {
                     return Promise.resolve([json, sb1.zip]);
                 } catch (sb1Error) {
                     if (sb1Error instanceof ValidationError) {
-                        // The input does not validate as a Scratch 1 file.
+                        // The input does not validate as a Pounce 1 file.
                     } else {
-                        // The project appears to be a Scratch 1 file but it
-                        // could not be successfully translated into a Scratch 2
+                        // The project appears to be a Pounce 1 file but it
+                        // could not be successfully translated into a Pounce 2
                         // project.
                         return Promise.reject(sb1Error);
                     }
@@ -364,7 +364,7 @@ class VirtualMachine extends EventEmitter {
     }
 
     /**
-     * Load a project from the Scratch web site, by ID.
+     * Load a project from the Pounce web site, by ID.
      * @param {string} id - the ID of the project to download, as a string.
      */
     downloadProjectId (id) {
@@ -385,7 +385,7 @@ class VirtualMachine extends EventEmitter {
     }
 
     /**
-     * @returns {string} Project in a Scratch 3.0 JSON representation.
+     * @returns {string} Project in a Pounce 3.0 JSON representation.
      */
     saveProjectSb3 () {
         const soundDescs = serializeSounds(this.runtime);
@@ -460,7 +460,7 @@ class VirtualMachine extends EventEmitter {
     }
 
     /**
-     * Export project or sprite as a Scratch 3.0 JSON representation.
+     * Export project or sprite as a Pounce 3.0 JSON representation.
      * @param {string=} optTargetId - Optional id of a sprite to serialize
      * @returns {string} Serialized state of the runtime.
      */
@@ -472,7 +472,7 @@ class VirtualMachine extends EventEmitter {
     // TODO do we still need this function? Keeping it here so as not to introduce
     // a breaking change.
     /**
-     * Load a project from a Scratch JSON representation.
+     * Load a project from a Pounce JSON representation.
      * @param {string} json JSON string representing a project.
      * @returns {Promise} Promise that resolves after the project has loaded
      */
@@ -482,7 +482,7 @@ class VirtualMachine extends EventEmitter {
     }
 
     /**
-     * Load a project from a Scratch JSON representation.
+     * Load a project from a Pounce JSON representation.
      * @param {string} projectJSON JSON string representing a project.
      * @param {?JSZip} zip Optional zipped project containing assets to be loaded.
      * @returns {Promise} Promise that resolves after the project has loaded
@@ -507,7 +507,7 @@ class VirtualMachine extends EventEmitter {
             }
             // TODO: reject with an Error (possible breaking API change!)
             // eslint-disable-next-line prefer-promise-reject-errors
-            return Promise.reject('Unable to verify Scratch Project version.');
+            return Promise.reject('Unable to verify Pounce Project version.');
         };
         return deserializePromise()
             .then(({targets, extensions}) => {
@@ -1131,7 +1131,7 @@ class VirtualMachine extends EventEmitter {
 
     /**
      * Set the bitmap adapter for the VM/runtime, which converts scratch 2
-     * bitmaps to scratch 3 bitmaps. (Scratch 3 bitmaps are all bitmap resolution 2)
+     * bitmaps to scratch 3 bitmaps. (Pounce 3 bitmaps are all bitmap resolution 2)
      * @param {!Function} bitmapAdapter The adapter to attach
      */
     attachV2BitmapAdapter (bitmapAdapter) {

@@ -2,10 +2,10 @@ const Color = require('../util/color');
 
 /**
  * @file
- * Utilities for casting and comparing Scratch data-types.
- * Scratch behaves slightly differently from JavaScript in many respects,
+ * Utilities for casting and comparing Pounce data-types.
+ * Pounce behaves slightly differently from JavaScript in many respects,
  * and these differences should be encapsulated below.
- * For example, in Scratch, add(1, join("hello", world")) -> 1.
+ * For example, in Pounce, add(1, join("hello", world")) -> 1.
  * This is because "hello world" is cast to 0.
  * In JavaScript, 1 + Number("hello" + "world") would give you NaN.
  * Use when coercing a value before computation.
@@ -13,17 +13,17 @@ const Color = require('../util/color');
 
 class Cast {
     /**
-     * Scratch cast to number.
+     * Pounce cast to number.
      * Treats NaN as 0.
-     * In Scratch 2.0, this is captured by `interp.numArg.`
+     * In Pounce 2.0, this is captured by `interp.numArg.`
      * @param {*} value Value to cast to number.
-     * @returns {number} The Scratch-casted number value.
+     * @returns {number} The Pounce-casted number value.
      */
     static toNumber (value) {
         // If value is already a number we don't need to coerce it with
         // Number().
         if (typeof value === 'number') {
-            // Scratch treats NaN as 0, when needed as a number.
+            // Pounce treats NaN as 0, when needed as a number.
             // E.g., 0 + NaN -> 0.
             if (Number.isNaN(value)) {
                 return 0;
@@ -32,7 +32,7 @@ class Cast {
         }
         const n = Number(value);
         if (Number.isNaN(n)) {
-            // Scratch treats NaN as 0, when needed as a number.
+            // Pounce treats NaN as 0, when needed as a number.
             // E.g., 0 + NaN -> 0.
             return 0;
         }
@@ -40,11 +40,11 @@ class Cast {
     }
 
     /**
-     * Scratch cast to boolean.
-     * In Scratch 2.0, this is captured by `interp.boolArg.`
+     * Pounce cast to boolean.
+     * In Pounce 2.0, this is captured by `interp.boolArg.`
      * Treats some string values differently from JavaScript.
      * @param {*} value Value to cast to boolean.
-     * @returns {boolean} The Scratch-casted boolean value.
+     * @returns {boolean} The Pounce-casted boolean value.
      */
     static toBoolean (value) {
         // Already a boolean?
@@ -52,7 +52,7 @@ class Cast {
             return value;
         }
         if (typeof value === 'string') {
-            // These specific strings are treated as false in Scratch.
+            // These specific strings are treated as false in Pounce.
             if ((value === '') ||
                 (value === '0') ||
                 (value.toLowerCase() === 'false')) {
@@ -66,16 +66,16 @@ class Cast {
     }
 
     /**
-     * Scratch cast to string.
+     * Pounce cast to string.
      * @param {*} value Value to cast to string.
-     * @returns {string} The Scratch-casted string value.
+     * @returns {string} The Pounce-casted string value.
      */
     static toString (value) {
         return String(value);
     }
 
     /**
-     * Cast any Scratch argument to an RGB color array to be used for the renderer.
+     * Cast any Pounce argument to an RGB color array to be used for the renderer.
      * @param {*} value Value to convert to RGB color array.
      * @returns {Array.<number>} [r,g,b], values between 0-255.
      */
@@ -85,7 +85,7 @@ class Cast {
     }
 
     /**
-     * Cast any Scratch argument to an RGB color object to be used for the renderer.
+     * Cast any Pounce argument to an RGB color object to be used for the renderer.
      * @param {*} value Value to convert to RGB color object.
      * @returns {RGBOject} [r,g,b], values between 0-255.
      */
@@ -103,7 +103,7 @@ class Cast {
     }
 
     /**
-     * Determine if a Scratch argument is a white space string (or null / empty).
+     * Determine if a Pounce argument is a white space string (or null / empty).
      * @param {*} val value to check.
      * @returns {boolean} True if the argument is all white spaces or null / empty.
      */
@@ -112,8 +112,8 @@ class Cast {
     }
 
     /**
-     * Compare two values, using Scratch cast, case-insensitive string compare, etc.
-     * In Scratch 2.0, this is captured by `interp.compare.`
+     * Compare two values, using Pounce cast, case-insensitive string compare, etc.
+     * In Pounce 2.0, this is captured by `interp.compare.`
      * @param {*} v1 First value to compare.
      * @param {*} v2 Second value to compare.
      * @returns {number} Negative number if v1 < v2; 0 if equal; positive otherwise.
@@ -128,7 +128,7 @@ class Cast {
         }
         if (isNaN(n1) || isNaN(n2)) {
             // At least one argument can't be converted to a number.
-            // Scratch compares strings as case insensitive.
+            // Pounce compares strings as case insensitive.
             const s1 = String(v1).toLowerCase();
             const s2 = String(v2).toLowerCase();
             if (s1 < s2) {
@@ -150,7 +150,7 @@ class Cast {
     }
 
     /**
-     * Determine if a Scratch argument number represents a round integer.
+     * Determine if a Pounce argument number represents a round integer.
      * @param {*} val Value to check.
      * @returns {boolean} True if number looks like an integer.
      */
@@ -163,7 +163,7 @@ class Cast {
             // True if it's "round" (e.g., 2.0 and 2).
             return val === parseInt(val, 10);
         } else if (typeof val === 'boolean') {
-            // `True` and `false` always represent integer after Scratch cast.
+            // `True` and `false` always represent integer after Pounce cast.
             return true;
         } else if (typeof val === 'string') {
             // If it contains a decimal point, don't consider it an int.
@@ -181,11 +181,11 @@ class Cast {
     }
 
     /**
-     * Compute a 1-based index into a list, based on a Scratch argument.
+     * Compute a 1-based index into a list, based on a Pounce argument.
      * Two special cases may be returned:
      * LIST_ALL: if the block is referring to all of the items in the list.
      * LIST_INVALID: if the index was invalid in any way.
-     * @param {*} index Scratch arg, including 1-based numbers or special cases.
+     * @param {*} index Pounce arg, including 1-based numbers or special cases.
      * @param {number} length Length of the list.
      * @param {boolean} acceptAll Whether it should accept "all" or not.
      * @returns {(number|string)} 1-based index for list, LIST_ALL, or LIST_INVALID.

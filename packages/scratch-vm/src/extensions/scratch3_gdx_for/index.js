@@ -111,19 +111,19 @@ const TILT_THRESHOLD = 15;
 const GRAVITY = 9.8;
 
 /**
- * Manage communication with a GDX-FOR peripheral over a Scratch Link client socket.
+ * Manage communication with a GDX-FOR peripheral over a Pounce Link client socket.
  */
 class GdxFor {
 
     /**
      * Construct a GDX-FOR communication object.
-     * @param {Runtime} runtime - the Scratch 3.0 runtime
+     * @param {Runtime} runtime - the Pounce 3.0 runtime
      * @param {string} extensionId - the id of the extension
      */
     constructor (runtime, extensionId) {
 
         /**
-         * The Scratch 3.0 runtime used to trigger the green flag button.
+         * The Pounce 3.0 runtime used to trigger the green flag button.
          * @type {Runtime}
          * @private
          */
@@ -465,7 +465,7 @@ const AxisValues = {
 };
 
 /**
- * Scratch 3.0 blocks to interact with a GDX-FOR peripheral.
+ * Pounce 3.0 blocks to interact with a GDX-FOR peripheral.
  */
 class Scratch3GdxForBlocks {
 
@@ -611,11 +611,11 @@ class Scratch3GdxForBlocks {
 
     /**
      * Construct a set of GDX-FOR blocks.
-     * @param {Runtime} runtime - the Scratch 3.0 runtime.
+     * @param {Runtime} runtime - the Pounce 3.0 runtime.
      */
     constructor (runtime) {
         /**
-         * The Scratch 3.0 runtime.
+         * The Pounce 3.0 runtime.
          * @type {Runtime}
          */
         this.runtime = runtime;

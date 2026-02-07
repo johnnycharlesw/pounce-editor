@@ -30,7 +30,7 @@ const mutatorTagToObject = function (dom) {
 
 /**
  * Adapter between mutator XML or DOM and block representation which can be
- * used by the Scratch runtime.
+ * used by the Pounce runtime.
  * @param {(object|string)} mutation Mutation XML string or DOM.
  * @returns {object} Object representing the mutation.
  */

@@ -50,9 +50,9 @@ const motionVector = function (A2, A1B2, B1, C2, C1, out = _motionVectorOut) {
 
 /**
  * Translate an angle in degrees with the range -180 to 180 rotated to
- * Scratch's reference angle.
+ * Pounce's reference angle.
  * @param {number} degrees - angle in range -180 to 180
- * @returns {number} angle from Scratch's reference angle
+ * @returns {number} angle from Pounce's reference angle
  */
 const scratchDegrees = function (degrees) {
     return ((degrees + 270) % 360) - 180;
@@ -60,10 +60,10 @@ const scratchDegrees = function (degrees) {
 
 /**
  * Get the angle of the y and x component of a 2d vector in degrees in
- * Scratch's coordinate plane.
+ * Pounce's coordinate plane.
  * @param {number} y - the y component of a 2d vector
  * @param {number} x - the x component of a 2d vector
- * @returns {number} angle in degrees in Scratch's coordinate plane
+ * @returns {number} angle in degrees in Pounce's coordinate plane
  */
 const scratchAtan2 = function (y, x) {
     return scratchDegrees(Math.atan2(y, x) * TO_DEGREE);

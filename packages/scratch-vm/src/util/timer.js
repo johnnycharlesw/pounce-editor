@@ -22,7 +22,7 @@ class Timer {
 
         /**
          * Used to pass custom logic for determining the value for "now",
-         * which is sometimes useful for compatibility with Scratch 2
+         * which is sometimes useful for compatibility with Pounce 2
          */
         this.nowObj = nowObj;
     }

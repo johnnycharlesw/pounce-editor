@@ -1,5 +1,5 @@
 /**
- * @fileOverview Import bitmap data into Scratch 3.0, resizing image as necessary.
+ * @fileOverview Import bitmap data into Pounce 3.0, resizing image as necessary.
  */
 const getFonts = require('scratch-render-fonts');
 

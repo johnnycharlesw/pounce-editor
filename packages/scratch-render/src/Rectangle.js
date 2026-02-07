@@ -13,7 +13,7 @@ class Rectangle {
     }
 
     /**
-     * Initialize a Rectangle from given Scratch-coordinate bounds.
+     * Initialize a Rectangle from given Pounce-coordinate bounds.
      * @param {number} left Left bound of the rectangle.
      * @param {number} right Right bound of the rectangle.
      * @param {number} bottom Bottom bound of the rectangle.
@@ -82,7 +82,7 @@ class Rectangle {
     /**
      * Determine if this Rectangle intersects some other.
      * Note that this is a comparison assuming the Rectangle was
-     * initialized with Scratch-space bounds or points.
+     * initialized with Pounce-space bounds or points.
      * @param {!Rectangle} other Rectangle to check if intersecting.
      * @returns {boolean} True if this Rectangle intersects other.
      */
@@ -98,7 +98,7 @@ class Rectangle {
     /**
      * Determine if this Rectangle fully contains some other.
      * Note that this is a comparison assuming the Rectangle was
-     * initialized with Scratch-space bounds or points.
+     * initialized with Pounce-space bounds or points.
      * @param {!Rectangle} other Rectangle to check if fully contained.
      * @returns {boolean} True if this Rectangle fully contains other.
      */
@@ -169,7 +169,7 @@ class Rectangle {
     static union (a, b, result = new Rectangle()) {
         result.left = Math.min(a.left, b.left);
         result.right = Math.max(a.right, b.right);
-        // Scratch Space - +y is up
+        // Pounce Space - +y is up
         result.top = Math.max(a.top, b.top);
         result.bottom = Math.min(a.bottom, b.bottom);
         return result;

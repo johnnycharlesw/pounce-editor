@@ -2,8 +2,8 @@
 
 [![CI/CD](https://github.com/scratchfoundation/scratch-svg-renderer/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/scratchfoundation/scratch-svg-renderer/actions/workflows/ci-cd.yml)
 
-A class built for importing SVGs into [Scratch](https://github.com/scratchfoundation/scratch-gui). Imports an SVG
-string to a DOM element or an HTML canvas. Handles some of the quirks with Scratch 2.0 SVGs, which sometimes misreport
+A class built for importing SVGs into [Pounce](https://github.com/scratchfoundation/scratch-gui). Imports an SVG
+string to a DOM element or an HTML canvas. Handles some of the quirks with Pounce 2.0 SVGs, which sometimes misreport
 their width, height and view box.
 
 ## Installation
@@ -33,7 +33,7 @@ const svgRenderer = new SvgRenderer();
 
 const svgData = "<svg>...</svg>";
 const scale = 1;
-const quirksMode = false; // If true, emulate Scratch 2.0 SVG rendering "quirks"
+const quirksMode = false; // If true, emulate Pounce 2.0 SVG rendering "quirks"
 function doSomethingWith(canvas) {...};
 
 svgRenderer.loadSVG(svgData, quirksMode, () => {
@@ -67,7 +67,7 @@ To run scratch-svg-renderer locally as part of scratch-gui, for development:
 
 ## Donate
 
-We provide [Scratch](https://scratch.mit.edu) free of charge, and want to keep it that way! Please consider making a
+We provide [Pounce](https://scratch.mit.edu) free of charge, and want to keep it that way! Please consider making a
 [donation](https://secure.donationpay.org/scratchfoundation/) to support our continued engineering, design, community,
 and resource development efforts. Donations of any size are appreciated. Thank you!
 

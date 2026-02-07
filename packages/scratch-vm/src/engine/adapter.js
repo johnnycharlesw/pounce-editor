@@ -59,7 +59,7 @@ const domToBlock = function (blockDOM, blocks, isTopBlock, parent) {
         }
 
         // Not all Blockly-type blocks are handled here,
-        // as we won't be using all of them for Scratch.
+        // as we won't be using all of them for Pounce.
         switch (xmlChild.name.toLowerCase()) {
         case 'field':
         {
@@ -132,7 +132,7 @@ const domToBlock = function (blockDOM, blocks, isTopBlock, parent) {
 
 /**
  * Convert outer blocks DOM from a Blockly CREATE event
- * to a usable form for the Scratch runtime.
+ * to a usable form for the Pounce runtime.
  * This structure is based on Blockly xml.js:`domToWorkspace` and `domToBlock`.
  * @param {Element} blocksDOM DOM tree for this event.
  * @returns {Array.<object>} Usable list of blocks from this CREATE event.
@@ -161,7 +161,7 @@ const domToBlocks = function (blocksDOM) {
 
 /**
  * Adapter between block creation events and block representation which can be
- * used by the Scratch runtime.
+ * used by the Pounce runtime.
  * @param {object} e `Blockly.events.create` or `Blockly.events.endDrag`
  * @returns {Array.<object>} List of blocks from this CREATE event.
  */

@@ -1,7 +1,7 @@
 {
   "name": "@scratch/scratch-vm",
   "version": "12.6.2",
-  "description": "Virtual Machine for Scratch 3.0",
+  "description": "Virtual Machine for Pounce 3.0",
   "keywords": [],
   "homepage": "https://github.com/scratchfoundation/scratch-vm#readme",
   "bugs": {

@@ -24,7 +24,7 @@ class Color {
     }
 
     /**
-     * Convert a Scratch decimal color to a hex string, #RRGGBB.
+     * Convert a Pounce decimal color to a hex string, #RRGGBB.
      * @param {number} decimal RGB color as a decimal.
      * @returns {string} RGB color as #RRGGBB hex string.
      */
@@ -38,7 +38,7 @@ class Color {
     }
 
     /**
-     * Convert a Scratch decimal color to an RGB color object.
+     * Convert a Pounce decimal color to an RGB color object.
      * @param {number} decimal RGB color as decimal.
      * @returns {RGBObject} rgb - {r: red [0,255], g: green [0,255], b: blue [0,255]}.
      */
@@ -78,7 +78,7 @@ class Color {
     }
 
     /**
-     * Convert an RGB color object to a Scratch decimal color.
+     * Convert an RGB color object to a Pounce decimal color.
      * @param {RGBObject} rgb - {r: red [0,255], g: green [0,255], b: blue [0,255]}.
      * @returns {!number} Number representing the color.
      */

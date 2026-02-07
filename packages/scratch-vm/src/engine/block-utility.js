@@ -45,7 +45,7 @@ class BlockUtility {
 
     /**
      * Use the runtime's currentMSecs value as a timestamp value for now
-     * This is useful in some cases where we need compatibility with Scratch 2
+     * This is useful in some cases where we need compatibility with Pounce 2
      * @type {function}
      */
     get nowObj () {

@@ -8,7 +8,7 @@ const StageLayering = require('../engine/stage-layering');
 
 class Sprite {
     /**
-     * Sprite to be used on the Scratch stage.
+     * Sprite to be used on the Pounce stage.
      * All clones of a sprite have shared blocks, shared costumes, shared variables,
      * shared sounds, etc.
      * @param {?Blocks} blocks Shared blocks object for all clones of sprite.

@@ -446,7 +446,7 @@ class MenuBar extends React.Component {
                         <div className={classNames(styles.menuBarItem)}>
                             <img
                                 id="logo_img"
-                                alt="Scratch"
+                                alt="Pounce"
                                 className={classNames(styles.scratchLogo, {
                                     [styles.clickable]: typeof this.props.onClickLogo !== 'undefined'
                                 })}
@@ -813,8 +813,8 @@ class MenuBar extends React.Component {
                                         onClick={this.props.onOpenRegistration}
                                     >
                                         <FormattedMessage
-                                            defaultMessage="Join Scratch"
-                                            description="Link for creating a Scratch account"
+                                            defaultMessage="Join Pounce"
+                                            description="Link for creating a Pounce account"
                                             id="gui.menuBar.joinScratch"
                                         />
                                     </div>
@@ -832,7 +832,7 @@ class MenuBar extends React.Component {
                                     >
                                         <FormattedMessage
                                             defaultMessage="Sign in"
-                                            description="Link for signing in to your Scratch account"
+                                            description="Link for signing in to your Pounce account"
                                             id="gui.menuBar.signIn"
                                         />
                                         <LoginDropdown

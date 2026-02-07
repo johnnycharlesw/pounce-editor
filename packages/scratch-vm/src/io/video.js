@@ -15,7 +15,7 @@ class Video {
         this.provider = null;
 
         /**
-         * Id representing a Scratch Renderer skin the video is rendered to for
+         * Id representing a Pounce Renderer skin the video is rendered to for
          * previewing.
          * @type {number}
          */

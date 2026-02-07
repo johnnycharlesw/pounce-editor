@@ -60,7 +60,7 @@ const SCRATCH_KEY_NAME = {
 };
 
 /**
- * Class for the makey makey blocks in Scratch 3.0
+ * Class for the makey makey blocks in Pounce 3.0
  * @class
  */
 class Scratch3MakeyMakeyBlocks {
@@ -316,7 +316,7 @@ class Scratch3MakeyMakeyBlocks {
      * @param {string} key A scratch key name.
      */
     keyPressed (key) {
-        // Store only the first word of the Scratch key name, so that e.g. when
+        // Store only the first word of the Pounce key name, so that e.g. when
         // "left arrow" is pressed, we store "LEFT", which matches KEY_ID_LEFT
         key = key.split(' ')[0];
         key = key.toUpperCase();

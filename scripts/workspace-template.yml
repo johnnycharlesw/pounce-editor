@@ -48,7 +48,7 @@ jobs:
       - name: Debug info
         run: |
           cat <<EOF
-          Scratch environment: ${{ vars.SCRATCH_ENV || '<none>' }}
+          Pounce environment: ${{ vars.SCRATCH_ENV || '<none>' }}
           Node version: $(node --version)
           NPM version: $(npm --version)
           GitHub ref: ${{ github.ref }}

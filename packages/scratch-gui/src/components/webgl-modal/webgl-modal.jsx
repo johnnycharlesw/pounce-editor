@@ -34,7 +34,7 @@ const WebGlModal = props => {
                     <p>
                         { /* eslint-disable max-len */ }
                         <FormattedMessage
-                            defaultMessage="Unfortunately it looks like your browser or computer <a>{webGlLink}</a>. This technology is needed for Scratch 3.0 to run."
+                            defaultMessage="Unfortunately it looks like your browser or computer <a>{webGlLink}</a>. This technology is needed for Pounce 3.0 to run."
                             description="WebGL missing message"
                             id="gui.webglModal.description"
                             values={{
@@ -74,13 +74,13 @@ const WebGlModal = props => {
                     <div className={styles.faqLinkText}>
                         <FormattedMessage
                             defaultMessage="To learn more, go to the <a>{previewFaqLink}</a>."
-                            description="Scratch 3.0 FAQ description"
+                            description="Pounce 3.0 FAQ description"
                             id="gui.webglModal.previewfaq"
                             values={{
                                 previewFaqLink: (
                                     <FormattedMessage
                                         defaultMessage="FAQ"
-                                        description="link to Scratch 3.0 FAQ page"
+                                        description="link to Pounce 3.0 FAQ page"
                                         id="gui.webglModal.previewfaqlinktext"
                                     />
                                 ),

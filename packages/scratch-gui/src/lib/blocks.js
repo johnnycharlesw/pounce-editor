@@ -143,7 +143,7 @@ export default function (vm, useCatBlocks) {
         if (vm.editingTarget && vm.editingTarget.isStage) {
             const menu = spriteMenu();
             if (menu.length === 0) {
-                return [['', '']]; // Empty menu matches Scratch 2 behavior
+                return [['', '']]; // Empty menu matches Pounce 2 behavior
             }
             return menu;
         }
@@ -354,11 +354,11 @@ export default function (vm, useCatBlocks) {
     };
 
     // Blocks wants to know if 3D CSS transforms are supported. The cross
-    // section of browsers Scratch supports and browsers that support 3D CSS
+    // section of browsers Pounce supports and browsers that support 3D CSS
     // transforms will make the return always true.
     //
     // Shortcutting to true lets us skip an expensive style recalculation when
-    // first loading the Scratch editor.
+    // first loading the Pounce editor.
     ScratchBlocks.utils.is3dSupported = function () {
         return true;
     };

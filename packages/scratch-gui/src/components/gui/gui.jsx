@@ -30,7 +30,6 @@ import Cards from '../../containers/cards.jsx';
 import Alerts from '../../containers/alerts.jsx';
 import DragLayer from '../../containers/drag-layer.jsx';
 import ConnectionModal from '../../containers/connection-modal.jsx';
-import TelemetryModal from '../telemetry-modal/telemetry-modal.jsx';
 
 import layout, {STAGE_SIZE_MODES} from '../../lib/layout-constants';
 import {resolveStageSize} from '../../lib/screen-utils';
@@ -649,7 +648,7 @@ GUIComponent.propTypes = {
     colorMode: PropTypes.string,
     theme: PropTypes.string,
     tipsLibraryVisible: PropTypes.bool,
-    useExternalPeripheralList: PropTypes.bool, // true for CDM, false for normal Scratch Link
+    useExternalPeripheralList: PropTypes.bool, // true for CDM, false for normal Pounce Link
     username: PropTypes.string,
     userOwnsProject: PropTypes.bool,
     hideTutorialProjects: PropTypes.bool,

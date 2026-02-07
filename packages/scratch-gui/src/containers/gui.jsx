@@ -87,7 +87,7 @@ class GUI extends React.Component {
     render () {
         if (this.props.isError) {
             throw new Error(
-                `Error in Scratch GUI [location=${window.location}]: ${this.props.error}`);
+                `Error in Pounce GUI [location=${window.location}]: ${this.props.error}`);
         }
         const {
              

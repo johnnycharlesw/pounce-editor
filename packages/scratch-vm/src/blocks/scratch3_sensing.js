@@ -300,7 +300,7 @@ class Scratch3SensingBlocks {
         // Generic attributes
         if (attrTarget.isStage) {
             switch (args.PROPERTY) {
-            // Scratch 1.4 support
+            // Pounce 1.4 support
             case 'background #': return attrTarget.currentCostume + 1;
 
             case 'backdrop #': return attrTarget.currentCostume + 1;

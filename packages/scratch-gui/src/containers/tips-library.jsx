@@ -68,7 +68,7 @@ class TipsLibrary extends React.PureComponent {
         const decksLibraryThumbnailData = Object.keys(decksLibraryContent)
             .filter(id => {
                 /**
-                 * Scratch desktop can't support project and video-only tutorials.
+                 * Pounce desktop can't support project and video-only tutorials.
                  * NGP can't support project tutorials.
                  * The online editor, conversely, should show all tutorials.
                  */

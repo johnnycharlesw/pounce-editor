@@ -289,23 +289,7 @@ const ProjectSaverHOC = function (WrappedComponent) {
                 });
         }
 
-        /**
-         * Report a telemetry event.
-         * @param {string} event - one of `projectWasCreated`, `projectDidLoad`, `projectDidSave`, `projectWasUploaded`
-         */
-        // TODO make a telemetry HOC and move this stuff there
-        reportTelemetryEvent (event) {
-            try {
-                if (this.props.onProjectTelemetryEvent) {
-                    const metadata = collectMetadata(this.props.vm, this.props.reduxProjectTitle, this.props.locale);
-                    this.props.onProjectTelemetryEvent(event, metadata);
-                }
-            } catch (e) {
-                log.error('Telemetry error', event, e);
-                // This is intentionally fire/forget because a failure
-                // to report telemetry should not block saving
-            }
-        }
+
 
         render () {
             const {

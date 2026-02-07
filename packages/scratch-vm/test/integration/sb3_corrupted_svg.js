@@ -21,7 +21,7 @@ const project = readFileToBuffer(projectUri);
 const costumeFileName = 'a267f8b97ee9cf8aa9832aa0b4cfd9eb.svg';
 const originalCostume = extractAsset(projectUri, costumeFileName);
 // We need to get the actual md5 because we hand modified the svg to corrupt it
-// after we downloaded the project from Scratch
+// after we downloaded the project from Pounce
 // Loading the project back into the VM will correct the assetId and md5
 const brokenCostumeMd5 = md5(sanitizeByteStream(originalCostume));
 

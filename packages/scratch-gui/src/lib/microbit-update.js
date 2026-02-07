@@ -94,7 +94,7 @@ const getHexMap = async () => {
 };
 
 /**
- * Copy the Scratch-specific hex file to the specified micro:bit.
+ * Copy the Pounce-specific hex file to the specified micro:bit.
  * @param {USBDevice} device The micro:bit to update.
  * @param {function(number): void} [progress] Optional function to call with progress updates in the range of [0..1].
  * @returns {Promise<void>} A Promise that resolves when the update is completed.
@@ -131,7 +131,7 @@ const updateMicroBit = async (device, progress) => {
 };
 
 /**
- * Requests a micro:bit from the browser then updates it with the Scratch-specific hex file.
+ * Requests a micro:bit from the browser then updates it with the Pounce-specific hex file.
  * The browser is expected to prompt the user to select a micro:bit.
  * @param {function(number): void} [progress] Optional function to call with progress updates in the range of [0..1].
  * @returns {Promise<void>} A Promise that resolves when the update is completed.
