@@ -14,7 +14,7 @@ const readFileToBuffer = require('../fixtures/readProjectFile').readFileToBuffer
 const VirtualMachine = require('../../src/index');
 const {serializeCostumes} = require('../../src/serialization/serialize-assets');
 
-const projectUri = path.resolve(__dirname, '../fixtures/missing_svg.sb3');
+const projectUri = path.resolve(__dirname, '../fixtures/missing_svg.pproj');
 const project = readFileToBuffer(projectUri);
 
 const missingCostumeAssetId = 'a267f8b97ee9cf8aa9832aa0b4cfd9eb';

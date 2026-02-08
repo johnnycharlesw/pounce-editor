@@ -159,7 +159,7 @@ test('edge activated hat should trigger for both sprites when sprite is duplicat
 
     // Project that is similar to timer-greater-than-hat.sb2, but has code on the sprite so that
     // the sprite can be duplicated
-    const projectWithSpriteUri = path.resolve(__dirname, '../fixtures/edge-triggered-hat.sb3');
+    const projectWithSpriteUri = path.resolve(__dirname, '../fixtures/edge-triggered-hat.pproj');
     const projectWithSprite = readFileToBuffer(projectWithSpriteUri);
 
     const vm = new VirtualMachine();
@@ -206,7 +206,7 @@ test('edge activated hat should trigger for both sprites when sprite is cloned',
 
     // Project that is similar to loudness-hat-block.sb2, but has code on the sprite so that
     // the sprite can be duplicated
-    const projectWithSpriteUri = path.resolve(__dirname, '../fixtures/edge-triggered-hat.sb3');
+    const projectWithSpriteUri = path.resolve(__dirname, '../fixtures/edge-triggered-hat.pproj');
     const projectWithSprite = readFileToBuffer(projectWithSpriteUri);
 
     const vm = new VirtualMachine();

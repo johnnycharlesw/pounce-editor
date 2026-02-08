@@ -5,7 +5,7 @@ const readFileToBuffer = require('../fixtures/readProjectFile').readFileToBuffer
 const VirtualMachine = require('../../src/index');
 const Variable = require('../../src/engine/variable');
 
-const projectUri = path.resolve(__dirname, '../fixtures/monitors.sb3');
+const projectUri = path.resolve(__dirname, '../fixtures/monitors.pproj');
 const project = readFileToBuffer(projectUri);
 
 test('importing sb3 project with monitors', t => {

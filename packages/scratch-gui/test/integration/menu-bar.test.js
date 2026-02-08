@@ -72,8 +72,8 @@ describe('Menu bar settings', () => {
         await loadUri(uri);
         await clickXpath(FILE_MENU_XPATH);
         await clickText('Load from your computer');
-        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3"]');
-        await input.sendKeys(path.resolve(__dirname, '../fixtures/project1.sb3'));
+        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3,.pproj"]');
+        await input.sendKeys(path.resolve(__dirname, '../fixtures/project1.sb3,.pproj'));
         // No replace alert since no changes were made
         await findByText('project1-sprite');
     });
@@ -88,8 +88,8 @@ describe('Menu bar settings', () => {
 
         await clickXpath(FILE_MENU_XPATH);
         await clickText('Load from your computer');
-        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3"]');
-        await input.sendKeys(path.resolve(__dirname, '../fixtures/project1.sb3'));
+        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3,.pproj"]');
+        await input.sendKeys(path.resolve(__dirname, '../fixtures/project1.pproj'));
         await driver.switchTo().alert()
             .accept();
         await findByText('project1-sprite');

@@ -9,7 +9,7 @@ const makeTestStorage = require('../fixtures/make-test-storage');
 const readFileToBuffer = require('../fixtures/readProjectFile').readFileToBuffer;
 
 // it doesn't really matter which project we use: we're testing side effects of loading any project
-const uri = path.resolve(__dirname, '../fixtures/default.sb3');
+const uri = path.resolve(__dirname, '../fixtures/default.pproj');
 const project = readFileToBuffer(uri);
 
 // By default Central Dispatch works with the Worker class built into the browser. Tell it to use TinyWorker instead.

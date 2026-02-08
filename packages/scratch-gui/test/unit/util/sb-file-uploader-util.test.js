@@ -1,6 +1,11 @@
 import {getProjectTitleFromFilename} from '../../../src/lib/sb-file-uploader-utils';
 
 describe('getProjectTitleFromFilename', () => {
+    test('correctly sets title with .pproj filename', () => {
+        const projectName = getProjectTitleFromFilename('my project is great.pproj');
+        expect(projectName).toBe('my project is great');
+    });
+
     test('correctly sets title with .sb3 filename', () => {
         const projectName = getProjectTitleFromFilename('my project is great.sb3');
         expect(projectName).toBe('my project is great');

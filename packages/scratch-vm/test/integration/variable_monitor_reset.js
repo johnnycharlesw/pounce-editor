@@ -4,7 +4,7 @@ const makeTestStorage = require('../fixtures/make-test-storage');
 const readFileToBuffer = require('../fixtures/readProjectFile').readFileToBuffer;
 const VirtualMachine = require('../../src/index');
 
-const projectUri = path.resolve(__dirname, '../fixtures/monitored_variables.sb3');
+const projectUri = path.resolve(__dirname, '../fixtures/monitored_variables.pproj');
 const project = readFileToBuffer(projectUri);
 
 const anotherProjectUri = path.resolve(__dirname, '../fixtures/default.sb2');

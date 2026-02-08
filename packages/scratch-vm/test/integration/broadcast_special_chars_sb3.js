@@ -7,7 +7,7 @@ const Variable = require('../../src/engine/variable');
 const StringUtil = require('../../src/util/string-util');
 const VariableUtil = require('../../src/util/variable-util');
 
-const projectUri = path.resolve(__dirname, '../fixtures/broadcast_special_chars.sb3');
+const projectUri = path.resolve(__dirname, '../fixtures/broadcast_special_chars.pproj');
 const project = readFileToBuffer(projectUri);
 
 test('importing sb3 project with special chars in message names', t => {

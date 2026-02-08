@@ -4,10 +4,10 @@ const makeTestStorage = require('../fixtures/make-test-storage');
 const readFileToBuffer = require('../fixtures/readProjectFile').readFileToBuffer;
 const VirtualMachine = require('../../src/index');
 
-const cloudVarSimpleUri = path.resolve(__dirname, '../fixtures/cloud_variables_simple.sb3');
-const cloudVarLimitUri = path.resolve(__dirname, '../fixtures/cloud_variables_limit.sb3');
-const cloudVarExceededLimitUri = path.resolve(__dirname, '../fixtures/cloud_variables_exceeded_limit.sb3');
-const cloudVarLocalUri = path.resolve(__dirname, '../fixtures/cloud_variables_local.sb3');
+const cloudVarSimpleUri = path.resolve(__dirname, '../fixtures/cloud_variables_simple.pproj');
+const cloudVarLimitUri = path.resolve(__dirname, '../fixtures/cloud_variables_limit.pproj');
+const cloudVarExceededLimitUri = path.resolve(__dirname, '../fixtures/cloud_variables_exceeded_limit.pproj');
+const cloudVarLocalUri = path.resolve(__dirname, '../fixtures/cloud_variables_local.pproj');
 
 const cloudVarSimple = readFileToBuffer(cloudVarSimpleUri);
 const cloudVarLimit = readFileToBuffer(cloudVarLimitUri);

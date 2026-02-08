@@ -17,7 +17,7 @@ const {extractAsset, readFileToBuffer} = require('../fixtures/readProjectFile');
 const VirtualMachine = require('../../src/index');
 const {serializeCostumes} = require('../../src/serialization/serialize-assets');
 
-const projectUri = path.resolve(__dirname, '../fixtures/default.sb3');
+const projectUri = path.resolve(__dirname, '../fixtures/default.pproj');
 const project = readFileToBuffer(projectUri);
 
 const spriteUri = path.resolve(__dirname, '../fixtures/corrupt_png.sprite3');

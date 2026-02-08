@@ -4,13 +4,13 @@
   "private": "true",
   "description": "Pounce editor mono-repository",
   "keywords": [],
-  "homepage": "https://github.com/scratchfoundation/scratch-editor#readme",
+  "homepage": "https://github.com/johnnycharlesw/pounce-editor#readme",
   "bugs": {
-    "url": "https://github.com/scratchfoundation/scratch-editor/issues"
+    "url": "https://github.com/johnnycharlesw/pounce-editor/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/scratchfoundation/scratch-editor.git"
+    "url": "git+https://github.com/johnnycharlesw/pounce-editor.git"
   },
   "license": "AGPL-3.0-only",
   "author": "John Charles Woods",
@@ -37,8 +37,6 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "17.8.1",
-    "@commitlint/config-conventional": "17.8.1",
     "cross-env": "7.0.3",
     "globals": "16.5.0",
     "husky": "8.0.3",

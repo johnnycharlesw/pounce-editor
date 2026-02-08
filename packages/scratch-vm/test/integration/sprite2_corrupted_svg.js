@@ -18,7 +18,7 @@ const VirtualMachine = require('../../src/index');
 const {serializeCostumes} = require('../../src/serialization/serialize-assets');
 const {sanitizeByteStream} = require('../../../scratch-svg-renderer/src/sanitize-svg');
 
-const projectUri = path.resolve(__dirname, '../fixtures/default.sb3');
+const projectUri = path.resolve(__dirname, '../fixtures/default.pproj');
 const project = readFileToBuffer(projectUri);
 
 const spriteUri = path.resolve(__dirname, '../fixtures/corrupt_svg.sprite2');

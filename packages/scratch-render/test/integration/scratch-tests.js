@@ -120,7 +120,7 @@ const testFile = async (file, page) => {
     const page = await browser.newPage();
 
     const files = fs.readdirSync(testDir())
-        .filter(uri => uri.endsWith('.sb2') || uri.endsWith('.sb3'));
+        .filter(uri => uri.endsWith('.sb2') || uri.endsWith('.sb3') || uri.endsWith('.pproj'));
 
     for (const file of files) {
         await testFile(file, page);

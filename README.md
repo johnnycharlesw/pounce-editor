@@ -1,7 +1,7 @@
 # scratch-editor: The Pounce Editor Monorepo
 
-If you'd like to use Pounce, please visit the [Pounce website](https://scratch.mit.edu/). You can build your own
-Pounce project by pressing "Create" on that website or by visiting <https://scratch.mit.edu/projects/editor/>.
+If you'd like to use Pounce, please visit the [Pounce website](https://pounce.localhost/). You can build your own
+Pounce project by pressing "Create" on that website or by visiting <https://pounce.localhost/projects/new/>.
 
 This is a source code repository for the packages that make up the Pounce editor and a few additional support
 packages. Use this if you'd like to learn about how the Pounce editor works or to contribute to its development.
@@ -46,6 +46,6 @@ contributors. Thank you for your contributions and support. _[Pounce on!](https:
 
 ## Donate
 
-We provide [Pounce](https://scratch.mit.edu) free of charge, and want to keep it that way! Please consider making a
-[donation](https://secure.donationpay.org/scratchfoundation/) to support our continued engineering, design, community,
+We provide [Pounce](https://pounce.localhost) free of charge, and want to keep it that way! Please consider making a
+[donation](https://buymeacoffee.com/johnnycharlesw.github) to support our continued engineering, design, community,
 and resource development efforts. Donations of any size are appreciated. Thank you!

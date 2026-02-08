@@ -4,7 +4,7 @@ const makeTestStorage = require('../fixtures/make-test-storage');
 const readFileToBuffer = require('../fixtures/readProjectFile').readFileToBuffer;
 const VirtualMachine = require('../../src/index');
 
-const projectUri = path.resolve(__dirname, '../fixtures/list-monitor-rename.sb3');
+const projectUri = path.resolve(__dirname, '../fixtures/list-monitor-rename.pproj');
 const project = readFileToBuffer(projectUri);
 
 test('importing sb3 project with incorrect list monitor name', t => {

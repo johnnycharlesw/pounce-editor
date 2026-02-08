@@ -16,7 +16,7 @@ const VirtualMachine = require('../../src/index');
 const {serializeCostumes} = require('../../src/serialization/serialize-assets');
 const {sanitizeByteStream} = require('../../../scratch-svg-renderer/src/sanitize-svg');
 
-const projectUri = path.resolve(__dirname, '../fixtures/corrupt_svg.sb3');
+const projectUri = path.resolve(__dirname, '../fixtures/corrupt_svg.pproj');
 const project = readFileToBuffer(projectUri);
 const costumeFileName = 'a267f8b97ee9cf8aa9832aa0b4cfd9eb.svg';
 const originalCostume = extractAsset(projectUri, costumeFileName);

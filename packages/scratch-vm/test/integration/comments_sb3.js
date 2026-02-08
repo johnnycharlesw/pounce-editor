@@ -4,7 +4,7 @@ const makeTestStorage = require('../fixtures/make-test-storage');
 const readFileToBuffer = require('../fixtures/readProjectFile').readFileToBuffer;
 const VirtualMachine = require('../../src/index');
 
-const projectUri = path.resolve(__dirname, '../fixtures/comments.sb3');
+const projectUri = path.resolve(__dirname, '../fixtures/comments.pproj');
 const project = readFileToBuffer(projectUri);
 
 test('load an sb3 project with comments', t => {

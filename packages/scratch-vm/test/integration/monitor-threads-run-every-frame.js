@@ -6,7 +6,7 @@ const VirtualMachine = require('../../src/index');
 const Thread = require('../../src/engine/thread');
 const Runtime = require('../../src/engine/runtime');
 
-const projectUri = path.resolve(__dirname, '../fixtures/timer-monitor.sb3');
+const projectUri = path.resolve(__dirname, '../fixtures/timer-monitor.pproj');
 const project = readFileToBuffer(projectUri);
 
 const checkMonitorThreadPresent = (t, threads) => {

@@ -303,7 +303,7 @@ class VirtualMachine extends EventEmitter {
     }
 
     /**
-     * Load a Pounce project from a .sb, .sb2, .sb3 or json string.
+     * Load a Pounce project from a .sb, .sb2, .sb3,.pproj or json string.
      * @param {string | object} input A json string, object, or ArrayBuffer representing the project to load.
      * @returns {!Promise} Promise that resolves after targets are installed.
      */
@@ -402,7 +402,7 @@ class VirtualMachine extends EventEmitter {
 
         return zip.generateAsync({
             type: 'blob',
-            mimeType: 'application/x.scratch.sb3',
+            mimeType: 'application/x.pounce.pproj',
             compression: 'DEFLATE',
             compressionOptions: {
                 level: 6 // Tradeoff between best speed (1) and best compression (9)

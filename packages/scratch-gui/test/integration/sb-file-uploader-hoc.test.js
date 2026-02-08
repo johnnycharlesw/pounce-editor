@@ -30,8 +30,8 @@ describe('Loading scratch gui', () => {
         await loadUri(uri);
         await clickXpath(FILE_MENU_XPATH);
         await clickText('Load from your computer');
-        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3"]');
-        await input.sendKeys(path.resolve(__dirname, '../fixtures/project1.sb3'));
+        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3,.pproj"]');
+        await input.sendKeys(path.resolve(__dirname, '../fixtures/project1.pproj'));
         await findByText('project1-sprite');
         // this test will fail if an alert appears, e.g. in SBFileUploaderHOC's onload() function
     });
@@ -40,8 +40,8 @@ describe('Loading scratch gui', () => {
         await loadUri(uri);
         await clickXpath(FILE_MENU_XPATH);
         await clickText('Load from your computer');
-        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3"]');
-        await input.sendKeys(path.resolve(__dirname, '../fixtures/project1.sb3'));
+        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3,.pproj"]');
+        await input.sendKeys(path.resolve(__dirname, '../fixtures/project1.pproj'));
         await findByText('project1-sprite');
         await clickXpath('//input[@value="project1"]');
     });
@@ -50,8 +50,8 @@ describe('Loading scratch gui', () => {
         await loadUri(uri);
         await clickXpath(FILE_MENU_XPATH);
         await clickText('Load from your computer');
-        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3"]');
-        await input.sendKeys(path.resolve(__dirname, '../fixtures/missing-sprite-svg.sb3'));
+        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3,.pproj"]');
+        await input.sendKeys(path.resolve(__dirname, '../fixtures/missing-sprite-svg.pproj'));
         const spriteTile = await findByText('Blue Square Guy');
         const tileVisible = await spriteTile.isDisplayed();
         expect(tileVisible).toBe(true);
@@ -61,8 +61,8 @@ describe('Loading scratch gui', () => {
         await loadUri(uri);
         await clickXpath(FILE_MENU_XPATH);
         await clickText('Load from your computer');
-        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3"]');
-        await input.sendKeys(path.resolve(__dirname, '../fixtures/corrupt-svg.sb3'));
+        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3,.pproj"]');
+        await input.sendKeys(path.resolve(__dirname, '../fixtures/corrupt-svg.pproj'));
         const spriteTile = await findByText('Blue Square Guy');
         const tileVisible = await spriteTile.isDisplayed();
         expect(tileVisible).toBe(true);
@@ -72,7 +72,7 @@ describe('Loading scratch gui', () => {
         await loadUri(uri);
         await clickXpath(FILE_MENU_XPATH);
         await clickText('Load from your computer');
-        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3"]');
+        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3,.pproj"]');
         await input.sendKeys(path.resolve(__dirname, '../fixtures/missing-svg.sb2'));
         const spriteTile = await findByText('Blue Guy');
         const tileVisible = await spriteTile.isDisplayed();
@@ -83,7 +83,7 @@ describe('Loading scratch gui', () => {
         await loadUri(uri);
         await clickXpath(FILE_MENU_XPATH);
         await clickText('Load from your computer');
-        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3"]');
+        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3,.pproj"]');
         await input.sendKeys(path.resolve(__dirname, '../fixtures/corrupt-svg.sb2'));
         const spriteTile = await findByText('Blue Guy');
         const tileVisible = await spriteTile.isDisplayed();
@@ -94,8 +94,8 @@ describe('Loading scratch gui', () => {
         await loadUri(uri);
         await clickXpath(FILE_MENU_XPATH);
         await clickText('Load from your computer');
-        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3"]');
-        await input.sendKeys(path.resolve(__dirname, '../fixtures/missing-bmp.sb3'));
+        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3,.pproj"]');
+        await input.sendKeys(path.resolve(__dirname, '../fixtures/missing-bmp.pproj'));
         const spriteTile = await findByText('green-bmp-guy');
         const tileVisible = await spriteTile.isDisplayed();
         expect(tileVisible).toBe(true);
@@ -105,8 +105,8 @@ describe('Loading scratch gui', () => {
         await loadUri(uri);
         await clickXpath(FILE_MENU_XPATH);
         await clickText('Load from your computer');
-        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3"]');
-        await input.sendKeys(path.resolve(__dirname, '../fixtures/corrupt-bmp.sb3'));
+        const input = await findByXpath('//input[@accept=".sb,.sb2,.sb3,.pproj"]');
+        await input.sendKeys(path.resolve(__dirname, '../fixtures/corrupt-bmp.pproj'));
         const spriteTile = await findByText('green-bmp-guy');
         const tileVisible = await spriteTile.isDisplayed();
         expect(tileVisible).toBe(true);

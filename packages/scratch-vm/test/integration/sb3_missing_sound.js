@@ -12,7 +12,7 @@ const readFileToBuffer = require('../fixtures/readProjectFile').readFileToBuffer
 const VirtualMachine = require('../../src/index');
 const {serializeSounds} = require('../../src/serialization/serialize-assets');
 
-const projectUri = path.resolve(__dirname, '../fixtures/missing_sound.sb3');
+const projectUri = path.resolve(__dirname, '../fixtures/missing_sound.pproj');
 const project = readFileToBuffer(projectUri);
 
 const missingSoundAssetId = '78618aadd225b1db7bf837fa17dc0568';
