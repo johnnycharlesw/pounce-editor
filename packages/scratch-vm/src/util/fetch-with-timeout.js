@@ -29,7 +29,6 @@ const setFetch = newFetch => {
  */
 const fetchWithTimeout = (resource, init, timeout) => {
     let timeoutID = null;
-    // Not supported in Safari <11
     const controller = window.AbortController ? new window.AbortController() : null;
     const signal = controller ? controller.signal : null;
     // The fetch call races a timer.

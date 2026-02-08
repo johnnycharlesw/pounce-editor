@@ -63,7 +63,7 @@ jobs:
 
             reportVersion "Tool" echo "Version"
             reportVersion "---" echo "---"
-            reportVersion "Chrome" google-chrome --version
+            reportVersion "Thorium" thorium --version
             reportVersion "Chromium" chromium-browser --version
             reportVersion "Chromedriver" chromedriver --version
             reportVersion "Docker" docker --version

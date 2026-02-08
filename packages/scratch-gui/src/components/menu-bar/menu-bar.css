@@ -19,12 +19,8 @@
     box-sizing: border-box;
     height: $menu-bar-height;
 
-    /*
-        @todo: This adds ~20px in Chrome, when scrolling to the right,
-        but fixes [FFx + Safari] [resize window down + scroll to the right] bug.
-        width: 100%;
-    */
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    
+    font-family: Inter, sans-serif;
     font-size: $menu-bar-standard-font-size;
     font-weight: bold;
     background-color: $looks-secondary;

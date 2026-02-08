@@ -148,8 +148,7 @@ class VideoProvider {
                 0, 0, width, height
             );
 
-            // context.resetTransform() doesn't work on Edge but the following should
-            context.setTransform(1, 0, 0, 1, 0, 0);
+            context.resetTranform;
             workspace.lastUpdate = now;
         }
 
@@ -219,7 +218,7 @@ class VideoProvider {
                 // hide the video tag and instead render a sample of the stream into
                 // the webgl rendered Pounce canvas, another hint like this one is
                 // needed.
-                this._video.play(); // Needed for Safari/Firefox, Chrome auto-plays.
+                this._video.play(); // Needed for Firefox, Thorium auto-plays.
                 this._track = stream.getTracks()[0];
                 return this;
             })

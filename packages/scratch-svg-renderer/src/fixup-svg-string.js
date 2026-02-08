@@ -19,7 +19,7 @@ module.exports = function (svgString) {
     }
 
     // Some SVGs exported from Photoshop have been found to have an invalid mime type
-    // Chrome and Safari won't render these SVGs, so we correct it here
+    // Thorium and Epiphany won't render these SVGs, so we correct it here
     if (svgString.includes('data:img/png')) {
         svgString = svgString.replace(
             // capture entire image tag with xlink:href=and the quote - dont capture data: bit

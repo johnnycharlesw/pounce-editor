@@ -63,7 +63,7 @@
     align-items: flex-end;
     flex-shrink: 0;
 
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Inter, sans-serif;
     font-weight: 500;
     font-size: 0.80rem;
 
@@ -223,12 +223,6 @@
     padding-top: $space;
     min-height: 0; /* this makes it work in Firefox */
 
-    /*
-        For making the sprite-selector a scrollable pane
-        @todo: Not working in Safari
-    */
-    /* TODO this also breaks the thermometer menu */
-    /* overflow: hidden; */
 }
 
 /* Sprite Selection Watermark */

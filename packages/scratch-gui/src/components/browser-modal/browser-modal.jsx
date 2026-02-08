@@ -44,11 +44,11 @@ const BrowserModal = props => {
                         { /* eslint-disable max-len */ }
                         {
                             props.error ? <FormattedMessage
-                                defaultMessage="We are very sorry, but it looks like you are using a browser version that Pounce does not support. We recommend updating to the latest version of a supported browser such as Thorium, Firefox, or Safari. "
+                                defaultMessage="We are very sorry, but it looks like you are using a browser version that Pounce does not support. We recommend updating to the latest version of a supported browser such as Thorium, Firefox, or Epiphany. "
                                 description="Error message when the browser does not meet our minimum requirements"
                                 id="gui.unsupportedBrowser.notRecommended"
                             /> : <FormattedMessage
-                                defaultMessage="We are very sorry, but Pounce just cannot run on this browser because it does not comply with new enough W3C standards. We recommend updating to the latest version of a supported browser such as Thorium, Firefox, or Safari."
+                                defaultMessage="We are very sorry, but Pounce just cannot run on this browser because it does not comply with new enough W3C standards. We recommend updating to the latest version of a supported browser such as Thorium, Firefox, or Epiphany."
                                 description="Error message when the browser does not work at all (IE)"
                                 id="gui.unsupportedBrowser.description"
                             />

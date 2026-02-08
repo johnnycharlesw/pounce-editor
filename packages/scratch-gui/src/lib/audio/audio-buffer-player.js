@@ -45,13 +45,7 @@ class AudioBufferPlayer {
     stop () {
         if (this.source) {
             this.source.onended = null; // Do not call onEnded callback if manually stopped
-            try {
-                this.source.stop();
-            } catch (e) {
-                // This is probably Safari, which dies when you call stop more than once
-                // which the spec says is allowed: https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode
-                console.log('Caught error while stopping buffer source node.'); // eslint-disable-line no-console
-            }
+            this.source.stop();
         }
     }
 }

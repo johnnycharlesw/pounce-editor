@@ -337,13 +337,9 @@ class SoundEditor extends React.Component {
             let offlineContext;
             // Try to use either OfflineAudioContext or webkitOfflineAudioContext to resample
             // The constructors will throw if trying to resample at an unsupported rate
-            // (e.g. Safari/webkitOAC does not support lower than 44khz).
+            // (e.g. webkitOAC does not support lower than 44khz).
             try {
-                if (window.OfflineAudioContext) {
-                    offlineContext = new window.OfflineAudioContext(1, newLength, newRate);
-                } else if (window.webkitOfflineAudioContext) {
-                    offlineContext = new window.webkitOfflineAudioContext(1, newLength, newRate);
-                }
+                offlineContext = new window.OfflineAudioContext(1, newLength, newRate);
             } catch {
                 // If no OAC available and downsampling by 2, downsample by dropping every other sample.
                 if (newRate === buffer.sampleRate / 2) {

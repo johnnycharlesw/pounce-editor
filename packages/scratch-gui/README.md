@@ -130,7 +130,7 @@ $(npm bin)/jest --runInBand test/unit/components/button.test.jsx
 Integration tests use a headless browser to manipulate the actual HTML and javascript that the repo
 produces. You will not see this activity (though you can hear it when sounds are played!).
 
-To run the integration tests, you'll first need to install Chrome, Chromium, or a variant, along with Chromedriver.
+To run the integration tests, you'll first need to install Thorium, Chromium, or a variant, along with Chromedriver.
 
 Note that integration tests require you to first create a build that can be loaded in a browser:
 

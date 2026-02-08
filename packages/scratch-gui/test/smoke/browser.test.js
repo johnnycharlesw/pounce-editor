@@ -40,35 +40,4 @@ describe('Smoke tests on older browsers', () => {
         return expect(isDisplayed).toEqual(true);
     });
 
-    test('Safari 9 should be supported', async () => {
-        const driverConfig = {
-            browserName: 'safari',
-            platform: 'OS X 10.11',
-            version: '9.0'
-        };
-        driver = await getSauceDriver(
-            process.env.SAUCE_USERNAME,
-            process.env.SAUCE_ACCESS_KEY,
-            driverConfig);
-        await driver.get(process.env.SMOKE_URL);
-        const el = await findByText(SUPPORTED_MESSAGE);
-        const isDisplayed = await el.isDisplayed();
-        return expect(isDisplayed).toEqual(true);
-    });
-
-    test('Safari 10 should be supported', async () => {
-        const driverConfig = {
-            browserName: 'safari',
-            platform: 'OS X 10.11',
-            version: '10.0'
-        };
-        driver = await getSauceDriver(
-            process.env.SAUCE_USERNAME,
-            process.env.SAUCE_ACCESS_KEY,
-            driverConfig);
-        await driver.get(process.env.SMOKE_URL);
-        const el = await findByText(SUPPORTED_MESSAGE);
-        const isDisplayed = await el.isDisplayed();
-        return expect(isDisplayed).toEqual(true);
-    });
 });

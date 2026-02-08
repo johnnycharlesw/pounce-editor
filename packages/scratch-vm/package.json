@@ -52,9 +52,8 @@
   },
   "browserslist": [
     "Chrome >= 63",
-    "Edge >= 15",
     "Firefox >= 57",
-    "Safari >= 11"
+    "AppleWebKit >= 11"
   ],
   "tap": {
     "allow-incomplete-coverage": true

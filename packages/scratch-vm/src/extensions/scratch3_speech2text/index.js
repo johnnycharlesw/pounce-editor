@@ -21,13 +21,6 @@ const iconURI = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vc
 // eslint-disable-next-line max-len
 const menuIconURI = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzc1NzU3NSI+CiAgICA8cGF0aCBkPSJNMTIgMTRjMS42NiAwIDIuOTktMS4zNCAyLjk5LTNMMTUgNWMwLTEuNjYtMS4zNC0zLTMtM1M5IDMuMzQgOSA1djZjMCAxLjY2IDEuMzQgMyAzIDN6bTUuMy0zYzAgMy0yLjU0IDUuMS01LjMgNS4xUzYuNyAxNCA2LjcgMTFINWMwIDMuNDEgMi43MiA2LjIzIDYgNi43MlYyMWgydi0zLjI4YzMuMjgtLjQ4IDYtMy4zIDYtNi43MmgtMS43eiIvPgogICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4K';
 
-
-/**
- * The url of the speech server.
- * @type {string}
- */
-const serverURL = 'wss://speech.scratch.mit.edu';
-
 /**
  * The amount of time to wait between when we stop sending speech data to the server and when
  * we expect the transcription result marked with isFinal: true to come back from the server.
@@ -467,8 +460,6 @@ class Scratch3Speech2TextBlocks {
      */
     _initListening () {
         this._initializeMicrophone();
-        this._initScriptNode();
-        this._newWebsocket();
     }
 
     /**
@@ -478,11 +469,8 @@ class Scratch3Speech2TextBlocks {
     _initializeMicrophone () {
         // Don't make a new context if we already made one.
         if (!this._context) {
-            // Safari still needs a webkit prefix for audio context
-            this._context = new (window.AudioContext || window.webkitAudioContext)();
+            this._context = new (window.AudioContext)();
         }
-        // In safari we have to call getUserMedia every time we want to listen. Other browsers allow
-        // you to reuse the mediaStream.  See #1202 for more context.
         this._audioPromise = navigator.mediaDevices.getUserMedia({
             audio: true
         });
@@ -492,77 +480,6 @@ class Scratch3Speech2TextBlocks {
         });
     }
 
-    /**
-     * Sets up the script processor and the web socket.
-     * @private
-     */
-    _initScriptNode () {
-        // Create a node that sends raw bytes across the websocket
-        this._scriptNode = this._context.createScriptProcessor(4096, 1, 1);
-    }
-
-    /**
-     * Callback called when it is time to setup the new web socket.
-     * @param {Function} resolve - function to call when the web socket opens succesfully.
-     * @param {Function} reject - function to call if opening the web socket fails.
-     */
-    _newSocketCallback (resolve, reject) {
-        this._socket = new WebSocket(serverURL);
-        this._socket.addEventListener('open', resolve);
-        this._socket.addEventListener('error', reject);
-    }
-
-    /**
-     * Callback called once we've initially established the web socket is open and working.
-     * Sets up the callback for subsequent messages (i.e. transcription results)  and
-     * connects to the script node to get data.
-     * @private
-     */
-    _socketMessageCallback () {
-        this._socket.addEventListener('message', this._onTranscriptionFromServer);
-        this._startByteStream();
-    }
-
-    /**
-     * Sets up callback for when socket and audio are initialized.
-     * @private
-     */
-    _newWebsocket () {
-        const websocketPromise = new Promise(this._newSocketCallback);
-        Promise.all([this._audioPromise, websocketPromise]).then(
-            this._setupSocketCallback)
-            .catch(e => {
-                log.error(`Problem with setup:  ${e}`);
-            });
-    }
-
-    /**
-     * Callback to handle initial setting up of a socket.
-     * Currently we send a setup message (only contains sample rate) but might
-     * be useful to send more data so we can do quota stuff.
-     * @param {Array} values The
-     */
-    _setupSocketCallback (values) {
-        this._micStream = values[0];
-        this._socket = values[1].target;
-
-        this._socket.addEventListener('error', e => {
-            log.error(`Error from web socket: ${e}`);
-        });
-
-        // Send the initial configuration message. When the server acknowledges
-        // it, start streaming the audio bytes to the server and listening for
-        // transcriptions.
-        this._socket.addEventListener('message', this._socketMessageCallback, {once: true});
-        const langCode = this._getViewerLanguageCode();
-        this._socket.send(JSON.stringify(
-            {
-                sampleRate: this._context.sampleRate,
-                phrases: this._phraseList,
-                locale: langCode
-            }
-        ));
-    }
 
     /**
      * Do setup so we can start streaming mic data.

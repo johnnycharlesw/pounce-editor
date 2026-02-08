@@ -44,9 +44,8 @@
   },
   "browserslist": [
     "Chrome >= 63",
-    "Edge >= 15",
     "Firefox >= 57",
-    "Safari >= 8",
+    "AppleWebKit >= 8",
     "Android >= 63",
     "iOS >= 8"
   ],
