@@ -75,7 +75,7 @@
     "scratch-audio": "2.0.268",
     "scratch-parser": "6.0.0",
     "scratch-sb1-converter": "2.0.279",
-    "scratch-storage": "6.1.6",
+    "scratch-storage": "6.1.8",
     "scratch-translate-extension-languages": "1.0.7",
     "text-encoding": "0.7.0",
     "tslog": "4.10.2",
@@ -106,10 +106,10 @@
     "script-loader": "0.7.2",
     "semantic-release": "25.0.3",
     "stats.js": "0.17.0",
-    "tap": "21.5.0",
+    "tap": "21.5.1",
     "tiny-worker": "2.3.0",
     "typedoc": "0.28.16",
-    "webpack": "5.105.0",
+    "webpack": "5.105.1",
     "webpack-cli": "4.10.0",
     "webpack-dev-server": "5.2.3"
   }
